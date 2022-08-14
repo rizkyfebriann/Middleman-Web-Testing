@@ -19,7 +19,7 @@ public class WebdriverInstance {
         webdriver = new ChromeDriver(options);
         webdriver.manage().window().maximize();
         webdriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        webdriver.get("https://www.saucedemo.com/");
+        webdriver.get("https://middleman-xi-rosy.vercel.app/auth/login");
         webdriver.manage().deleteAllCookies();
     }
 
