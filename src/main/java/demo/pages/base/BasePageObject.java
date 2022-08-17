@@ -4,6 +4,7 @@ import demo.webdriver.WebdriverInstance;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
@@ -45,15 +46,56 @@ public class BasePageObject {
     }
 
     public void scrollDown() {
-        wait(1000);
+        wait(2000);
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
-        js.executeScript("window.scrollTo(0, 350)");
+        js.executeScript("window.scrollTo(0, 400)");
     }
 
     public void moveToTab(int index) {
         ArrayList<String> tabs = new ArrayList(getDriver().getWindowHandles());
         getDriver().switchTo().window(tabs.get(index));
         System.out.println(tabs);
+    }
+
+    public void alertSuccessLogin() throws InterruptedException {
+        Thread.sleep(2000);
+        Alert successLogin = getDriver().switchTo().alert();
+        successLogin.accept();
+    }
+
+    public void alertSuccessRegister() {
+        wait(2000);
+        Alert successRegister = getDriver().switchTo().alert();
+        successRegister.accept();
+        wait(2000);
+    }
+
+    public void alertMininumNameShop() {
+        wait(2000);
+        Alert minimumNameShop = getDriver().switchTo().alert();
+        minimumNameShop.accept();
+        wait(2000);
+    }
+
+    public void alertMininumPhoneNumber() {
+        wait(2000);
+        Alert minimumPhone = getDriver().switchTo().alert();
+        minimumPhone.accept();
+        wait(2000);
+    }
+
+    public void alertEmailorPhoneRegistered() {
+        wait(2000);
+        Alert registeredUser = getDriver().switchTo().alert();
+        registeredUser.accept();
+        wait(2000);
+    }
+
+    public void alertEmailorPasswordIncorrect() {
+        wait(2000);
+        Alert incorrect = getDriver().switchTo().alert();
+        incorrect.accept();
+        wait(2000);
     }
 
     public String getTitle() {
