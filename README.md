@@ -100,7 +100,7 @@ Description about project
 **Testing Tools for automation:** 
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 - [Java](https://www.java.com/)
-- [Maven](https://maven.apache.org/)
+- [Gradle](https://gradle.org/)
 - [Google Chrome (WEB Browser)](https://www.google.com/chrome/)
 
 **Framework for automation:**
