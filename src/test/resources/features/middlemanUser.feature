@@ -35,9 +35,6 @@ Feature: Login
     And user click button edit
     And user can see pop up edit profile
     And user input name "<name>"
-    And user input email1 "<email>"
-    And user input phone number1 "<phone>"
-    And user input address1 "<address>"
     And user click edit button
     Then user see required alert on username field
     Examples:
