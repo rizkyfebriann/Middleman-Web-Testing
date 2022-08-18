@@ -17,10 +17,12 @@ public class MiddlemanRegisterPages extends BasePageObject {
     By elementisOnLoginPage = By.xpath("//h4[contains(text(),'Sign in to continue')]");
 
     public void inputNameShop(String nameShop) {
+        getDriver().findElement(elementInputNameShop).clear();
         typeOn(elementInputNameShop, nameShop);
     }
 
     public void inputEmailUser(String email) {
+        getDriver().findElement(elementInputEmail).clear();
         typeOn(elementInputEmail, email);
     }
 
@@ -29,10 +31,12 @@ public class MiddlemanRegisterPages extends BasePageObject {
     }
 
     public void inputPhone(String phone) {
+        getDriver().findElement(elementInputPhone).clear();
         typeOn(elementInputPhone, phone);
     }
 
     public void inputAddress(String address) {
+        getDriver().findElement(elementInputAddress).clear();
         typeOn(elementInputAddress, address);
     }
 

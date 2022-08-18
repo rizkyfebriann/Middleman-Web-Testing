@@ -103,4 +103,10 @@ public class BasePageObject {
         return getDriver().getTitle();
     }
 
+    public void alertSuccessEditProfile() {
+        wait(2000);
+        Alert successRegister = getDriver().switchTo().alert();
+        successRegister.accept();
+        wait(2000);
+    }
 }
