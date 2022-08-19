@@ -15,9 +15,9 @@
 <p align="center">
   <a href="#about-the-project">About The Project</a> •
   <a href="#documentation">Documentation</a> •
-  <a href="#Web-Manual-Test-Screenshot">Automation Screenshots</a> •
-  <a href="#Web-Automation-Test-Screenshot">Automation Recording</a> •
-  <a href="#Usage-Tools">Usage Tools</a> •
+  <a href="#Web-Manual-Test-Screenshot">Manual Testing</a> •
+  <a href="#Web-Automation-Test-Screenshot">Automation Testing</a> •
+  <a href="#Tech-Stack">Tech Stack</a> •
   <a href="#Contacts">Contacts</a>
 </p>  
 
@@ -91,7 +91,7 @@ Description about project
 
 
 
-## Usage Tools 
+## Tech Stack 
 
 **Testing Tools for manual:**  
 - [Google Chrome (WEB Browser)](https://www.google.com/chrome/)
