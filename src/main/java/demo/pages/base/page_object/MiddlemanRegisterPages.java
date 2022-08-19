@@ -21,24 +21,45 @@ public class MiddlemanRegisterPages extends BasePageObject {
         typeOn(elementInputNameShop, nameShop);
     }
 
+//    public void inputNameClear(String name) {
+//        getDriver().findElement(elementInputNameShop).clear();
+//
+//    }
+
     public void inputEmailUser(String email) {
         getDriver().findElement(elementInputEmail).clear();
         typeOn(elementInputEmail, email);
     }
 
+//    public void inputEmailClear(String email) {
+//        getDriver().findElement(elementInputNameShop).clear();
+//    }
+
     public void inputPassword(String password) {
         typeOn(elementInputPassword, password);
     }
+
+//    public void inputPasswordClear(String password) {
+//        getDriver().findElement(elementInputNameShop).clear();
+//    }
 
     public void inputPhone(String phone) {
         getDriver().findElement(elementInputPhone).clear();
         typeOn(elementInputPhone, phone);
     }
+//    public void inputPhoneClear(String phone) {
+//        getDriver().findElement(elementInputNameShop).clear();
+//    }
+
 
     public void inputAddress(String address) {
         getDriver().findElement(elementInputAddress).clear();
         typeOn(elementInputAddress, address);
     }
+
+//    public void inputAddressClear(String emil) {
+//        getDriver().findElement(elementInputNameShop).clear();
+//    }
 
     public void clickButtonSignUp() {
         clickOn(elementSignUpButton);

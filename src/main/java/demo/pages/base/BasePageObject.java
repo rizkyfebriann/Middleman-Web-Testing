@@ -105,8 +105,22 @@ public class BasePageObject {
 
     public void alertSuccessEditProfile() {
         wait(2000);
-        Alert successRegister = getDriver().switchTo().alert();
-        successRegister.accept();
+        Alert successEditProfile = getDriver().switchTo().alert();
+        successEditProfile.accept();
+        wait(2000);
+    }
+
+    public void alertNoSuccessEditProfile() {
+        wait(3000);
+        Alert noSuccessEditProfile = getDriver().switchTo().alert();
+        noSuccessEditProfile.accept();
+        wait(3000);
+    }
+
+    public void alertEditEmailIncorrect() {
+        wait(2000);
+        Alert incorrectEmail = getDriver().switchTo().alert();
+        incorrectEmail.accept();
         wait(2000);
     }
 }
