@@ -180,7 +180,7 @@ Feature: Register
   Scenario: Register without fill address
     Given user open register page
     And user input name shop "Toko Testing Cuan Bismillah"
-    And user input email "tester0001@mail.com"
+    And user input email "tester10000@mail.com"
     And user input phone number "08574893829"
     And user input password "test123"
     Then user click sign up button
