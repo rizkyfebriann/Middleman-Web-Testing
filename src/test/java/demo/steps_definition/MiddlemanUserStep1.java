@@ -7,6 +7,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class MiddlemanUserStep1 {
     MiddlemanRegisterPages middlemanRegisterPages = new MiddlemanRegisterPages();
@@ -94,11 +96,27 @@ public class MiddlemanUserStep1 {
         middlemanUserPages.inputNameClear(name);
     }
 
-    @Then("user see alert on name field for filling name")
-    public void userSeeAlertOnNameFieldForFillingName() {
-        middlemanUserPages.isStillOnPopUpEdit();
+    @Then("user see alert name minimal format two character")
+    public void userSeeAlertNameMinimalFormatTwoCharacter() {
+        middlemanUserPages.alertEditFieldIsEmpty();
     }
 
+    @And("user input data empty email {string}")
+    public void userInputDataEmptyEmail(String email) {
+        middlemanUserPages.inputEmailClear(email);
+    }
+
+    @And("user input data empty phone number {string}")
+    public void userInputDataEmptyPhoneNumber(String phone) {
+        middlemanUserPages.inputPhoneClear(phone);
+    }
+
+    @Then("user can see pop up alert please fill out this field")
+    public void userCanSeePopUpAlertPleaseFillOutThisField() {
+//        Assert.assertTrue(middlemanUserPages.isStillOnFieldEmail());
+
+
+    }
 
 
 //    @And("user input name {string}")

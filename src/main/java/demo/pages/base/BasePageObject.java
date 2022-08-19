@@ -123,4 +123,28 @@ public class BasePageObject {
         incorrectEmail.accept();
         wait(2000);
     }
+
+    public void alertEditFieldIsEmpty() {
+        wait(2000);
+        Alert alert = getDriver().switchTo().alert();
+        alert.getText();
+        wait(2000);
+    }
+
+    public void alertEditFieldEmptyEmail() {
+        wait(2000);
+        Alert alert = getDriver().switchTo().alert();
+        alert.getText();
+
+//        WebElement emailAddress = getDriver().findElement(By.cssSelector("[name='emailAddress']"));
+//        String required = emailAddress.getAttribute("required");
+//        assertEquals(required, "true");
+//
+//        webdriver.switchTo().frame(iframeSwitch);
+//        wait.until(ExpectedConditions.elementToBeClickable(submit));
+//        WebElement submitbtn = webdriver.findElement(submit);
+//        submitbtn.click();
+        wait(2000);
+    }
+
 }

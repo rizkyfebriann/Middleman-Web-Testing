@@ -74,11 +74,26 @@ Feature: Login
     When user click button edit
     And user can see pop up edit profile
     And user input data empty name " "
-#    And user input data email "ernatoko1@gmail.com"
-#    And user input data phone number "081234111111"
-#    And user input data address "jalan cinta"
+    And user input data email "ernatoko1@gmail.com"
+    And user input data phone number "081234111111"
+    And user input data address "jalan cinta"
     And user click edit button
-    Then user see alert on name field for filling name
+    Then user see alert name minimal format two character
+
+  @user
+  Scenario: Update user with empty email
+    When user click button edit
+    And user can see pop up edit profile
+    And user input data empty name "toko ernawt123"
+    And user input data empty email " "
+    And user input data empty phone number "812345666612"
+    And user input data address "jalan cinta"
+    And user click edit button
+    Then user can see pop up alert please fill out this field
+
+
+
+
 
 
 
