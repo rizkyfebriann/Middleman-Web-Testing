@@ -75,7 +75,7 @@ Feature: Login
     And user can see pop up edit profile
     And user input data empty name ""
     And user click edit button
-    Then user can see pop up alert please fill out this field
+    Then user stay in the pop up edit profile
 
   @user
   Scenario: Update user with empty email
@@ -83,7 +83,7 @@ Feature: Login
     And user can see pop up edit profile
     And user input data empty email ""
     And user click edit button
-    Then user can see pop up alert please fill out this field
+    Then user stay in the pop up edit profile
 
 
 
