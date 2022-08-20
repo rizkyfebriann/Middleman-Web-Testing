@@ -24,7 +24,12 @@ public class MiddlemanCartPages extends BasePageObject {
 
     By elementBtnPlus = By.xpath("//*[@id=\"__next\"]/div/div[4]/div[1]/div/div[1]/button[2]");
     By elementNumberTextItem = By.xpath("//*[@id=\"__next\"]/div/div[4]/div[1]/div/div[1]/p");
-    By elementBtnMinus = By.xpath("//*[@id=\"__next\"]/div/div[4]/div[1]/div/div[1]/button[1]");
+
+    // Ambil button minus berdasarkan textnya
+    By elementBtnMinus = By.xpath("//button[text()=\"-\"]");
+
+    By elementProductQuantity = By.xpath("//button[text()=\"-\"][0]/../p");
+
     By elementBtnDelete = By.xpath("//*[@id=\"__next\"]/div/div[4]/div[1]/div/div[2]/button");
 
     public void clickBtnAdd() {
@@ -45,14 +50,6 @@ public class MiddlemanCartPages extends BasePageObject {
         wait(2000);
         alertSuccessAddToCart();
     }
-//    public boolean isSuccessfullyAddToCart() {
-//        wait(5000);
-//        return isPresent(elementLabelDashboard1);
-//    }
-
-//    public void alertSuccessfullyAddToCart() throws InterruptedException  {
-//        alertSuccessAddToCart();
-//    }
 
     public boolean isSuccessSeeAddToCart() {
         wait(5000);
@@ -74,7 +71,12 @@ public class MiddlemanCartPages extends BasePageObject {
     public void minusProduct() {
         clickOn(elementBtnMinus);
     }
+
     public void deleteButton() {
         clickOn(elementBtnDelete);
+    }
+
+    public int getProductCount(int index) {
+        return 0;
     }
 }

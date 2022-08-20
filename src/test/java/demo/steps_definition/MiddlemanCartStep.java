@@ -9,6 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 
 public class MiddlemanCartStep extends BasePageObject {
     MiddlemanCartPages middlemanCartPages = new MiddlemanCartPages();
@@ -21,10 +22,6 @@ public class MiddlemanCartStep extends BasePageObject {
     @And("user see alert success add to cart & click OK")
     public void userSeeAlertSucsessAddToCartClickOK() throws InterruptedException{
         middlemanCartPages.alertSuccessfullyAddtoCart();
-//        try {
-//            Assert.assertTrue(middlemanCartPages.isSuccessfullyAddToCart());
-//        } catch (NoSuchElementException ignored) {
-//        }
     }
     @And("user add product to cart")
     public void userAddProductToCart() {
@@ -72,9 +69,16 @@ public class MiddlemanCartStep extends BasePageObject {
     }
 
     @And("user click button minus to decrease the product")
-    public void userClikButtonMinusToDecreaseTheProduct() {
-        middlemanCartPages.textItemIncrease();
+    public void userClickButtonMinusToDecreaseTheProduct() {
+        System.out.println("!");
+        // Simpan hasil nomor sebelumnya
+
+        middlemanCartPages.minusProduct();
+
+        System.out.println("@");
     }
+
+
 
     @And("user click button delete product")
     public void userClikButtonDeleteProduct() {
