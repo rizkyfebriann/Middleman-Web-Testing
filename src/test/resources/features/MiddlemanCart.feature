@@ -73,7 +73,7 @@ Feature: Login
     And user clik button minus
     Then user can see the number of item is reduced
 
-# ini belom sucsees
+# 6:19 Bisa kurangin barangnya skrg, skrg kerjain assertion
   @AddToCart
   Scenario: Reduce the quantity in cart with two product
     When user click button add on the dashboard page
