@@ -18,7 +18,7 @@ public class MiddlemanCartStep extends BasePageObject {
         middlemanCartPages.clickBtnAdd();
     }
 
-    @And("user see alert sucsess add to cart & click OK")
+    @And("user see alert success add to cart & click OK")
     public void userSeeAlertSucsessAddToCartClickOK() throws InterruptedException{
         middlemanCartPages.alertSuccessfullyAddtoCart();
 //        try {
@@ -46,8 +46,8 @@ public class MiddlemanCartStep extends BasePageObject {
         middlemanCartPages.isSuccessSeeAddToCart();
     }
 
-    @Then("user can see the number of item increase")
-    public void userCanSeeTheNumberOfItemIncrease() {
+    @Then("user can see the number of item decreased")
+    public void userCanSeeTheNumberOfItemDecreased() {
         middlemanCartPages.textItemIncrease();
     }
 
@@ -71,18 +71,18 @@ public class MiddlemanCartStep extends BasePageObject {
         middlemanCartPages.textItemIncrease();
     }
 
-    @And("user clik button minus to icrease the product")
-    public void userClikButtonMinusToIcreaseTheProduct() {
+    @And("user click button minus to decrease the product")
+    public void userClikButtonMinusToDecreaseTheProduct() {
         middlemanCartPages.textItemIncrease();
     }
 
-    @And("user clik button delete product")
+    @And("user click button delete product")
     public void userClikButtonDeleteProduct() {
         middlemanCartPages.deleteButton();
     }
 
-    @Then("user can see the product is remove")
-    public void userCanSeeTheProductIsRemove() {
+    @Then("user can see the product is removed")
+    public void userCanSeeTheProductIsRemoved() {
         middlemanCartPages.isSuccessSeeAddToCart();
     }
 }

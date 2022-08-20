@@ -77,31 +77,31 @@ Feature: Login
   @AddToCart
   Scenario: Reduce the quantity in cart with two product
     When user click button add on the dashboard page
-    And user see alert sucsess add to cart & click OK
+    And user see alert success add to cart & click OK
     And user click My Cart
     Then user can see the product cart added
-    And user clik button minus to icrease the product
-    Then user can see the number of item increase
+    And user click button minus to decrease the product
+    Then user can see the number of item decreased
 
 # ini belom sucsees
   @AddToCart
   Scenario: Reduce the quantity in cart to zero
     When user click button add on the dashboard page
-    And user see alert sucsess add to cart & click OK
+    And user see alert success add to cart & click OK
     And user click My Cart
     Then user can see the product cart added
-    And user clik button minus to icrease the product
-    Then user can see the number of item increase
+    And user click button minus to decrease the product
+    Then user can see the number of item decreased
 
 #    ini juga tidak tahu gimana kalo elemennya udah kedelete assertnya apa
   @AddToCart
   Scenario: Remove 1 product(s) from the cart with the name <Product Name>
     When user click button add on the dashboard page
-    And user see alert sucsess add to cart & click OK
+    And user see alert success add to cart & click OK
     And user click My Cart
     Then user can see the product cart added
-    And user clik button delete product
-    Then user can see the product is remove
+    And user click button delete product
+    Then user can see the product is removed
 
   @AddToCart
   Scenario: Remove 2 product(s) from the cart with index <index>
