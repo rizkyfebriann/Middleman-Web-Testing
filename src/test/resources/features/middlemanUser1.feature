@@ -73,9 +73,9 @@ Feature: Login
   Scenario: Update user with empty name
     When user click button edit
     And user can see pop up edit profile
-    And user input data empty name " "
+    And user input data empty name ""
     And user click edit button
-    Then user see alert name minimal format two character
+    Then user can see pop up alert please fill out this field
 
   @user
   Scenario: Update user with empty email
