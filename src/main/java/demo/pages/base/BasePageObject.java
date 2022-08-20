@@ -141,6 +141,8 @@ public class BasePageObject {
         Alert alert = getDriver().switchTo().alert();
         alert.getText();
 
+
+
 //        WebElement emailAddress = getDriver().findElement(By.cssSelector("[name='emailAddress']"));
 //        String required = emailAddress.getAttribute("required");
 //        assertEquals(required, "true");
@@ -152,4 +154,16 @@ public class BasePageObject {
         wait(2000);
     }
 
+//    public void alertSuccessAddToCart() {
+//        wait(2000);
+//        Alert alert = getDriver().switchTo().alert();
+//        alert.getText();
+//        wait(2000);
+//    }
+
+    public void alertSuccessAddToCart() throws InterruptedException {
+        Thread.sleep(2000);
+        Alert successAddtoCart = getDriver().switchTo().alert();
+        successAddtoCart.accept();
+    }
 }

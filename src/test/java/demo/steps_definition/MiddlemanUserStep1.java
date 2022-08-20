@@ -6,6 +6,7 @@ import demo.pages.base.page_object.MiddlemanUserPages;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -33,8 +34,8 @@ public class MiddlemanUserStep1 {
         middlemanUserPages.isSuccessRedirectToMyProfile();
     }
 
-    @And("user click button edit")
-    public void userClickButtonEdit() {
+    @When("user open page my profile and click button edit")
+    public void userOpenPageMyProfileAndClickButtonEdit() {
         middlemanUserPages.clickButtonEditMyProfile();
     }
 
@@ -117,6 +118,13 @@ public class MiddlemanUserStep1 {
 
 
     }
+
+    @And("user input data empty address {string}")
+    public void userInputDataEmptyAddress(String address) {
+        middlemanUserPages.inputAddressClear(address);
+
+    }
+
 
 
 //    @And("user input name {string}")

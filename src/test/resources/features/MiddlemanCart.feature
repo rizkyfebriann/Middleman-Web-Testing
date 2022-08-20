@@ -6,9 +6,112 @@ Feature: Login
     And user see alert login success & click OK
     Then user success login
 
+#    ini udah success
   @AddToCart
-  Scenario: Add Product To Cart
-    When user click button add
+  Scenario: Add one product to the cart from the dashboard
+    When user click button add on the dashboard page
     And user see alert sucsess add to cart & click OK
     And user click My Cart
-    Then user can see the shopping cart added
+    Then user can see the product cart added
+
+#    ini tidak mengerti ngulangnya gimana kalo dari dashboard
+  @AddToCart
+  Scenario: Add two product to the cart from the dashbord
+    When user click button add on the dashboard page
+    And user see alert sucsess add to cart & click OK
+    And user add product2 to cart
+    And user see alert sucsess add to cart & click OK
+    And user click My Cart
+    Then user can see the product cart added
+
+#  @AddToCart
+#  Scenario: Add multyple product To Cart from the dashbord page
+#    When user click button add on the dashboard page
+#    And user see alert sucsess add to cart & click OK
+#    And user click My Cart
+#    Then user can see the product cart added
+#    And user clik button plus to add more item
+#    Then user can see the number of item increase
+
+# ini udah sucsees
+  @AddToCart
+  Scenario: Add one product to the cart from button plus in page My Cart
+    When user click button add on the dashboard page
+    And user see alert sucsess add to cart & click OK
+    And user click My Cart
+    Then user can see the product cart added
+    And user clik button plus to add more item
+    Then user can see the number of item increase
+
+# ini gimana loopingnya?
+  @AddToCart
+  Scenario: Add multyple product from page my cart page
+    When user click button add on the dashboard page
+    And user see alert sucsess add to cart & click OK
+    And user click My Cart
+    Then user can see the product cart added
+    And user clik button plus
+    Then user can see the number of item increase
+
+#    Ini Gimana cek kondisinya biar deteksi stock productnya?
+  @AddToCart
+  Scenario: Add product to cart until exceeds stock product from my cart page
+    When user click button add on the dashboard page
+    And user see alert sucsess add to cart & click OK
+    And user click My Cart
+    Then user can see the product cart added
+    And user clik button plus threed time
+    Then user can see the number of item increase
+
+    # ini udah sucsees
+  @AddToCart
+  Scenario: Reduce one product quantity in my cart
+    When user click button add on the dashboard page
+    And user see alert sucsess add to cart & click OK
+    And user click My Cart
+    Then user can see the product cart added
+    And user clik button minus
+    Then user can see the number of item is reduced
+
+# ini belom sucsees
+  @AddToCart
+  Scenario: Reduce the quantity in cart with two product
+    When user click button add on the dashboard page
+    And user see alert sucsess add to cart & click OK
+    And user click My Cart
+    Then user can see the product cart added
+    And user clik button minus to icrease the product
+    Then user can see the number of item increase
+
+# ini belom sucsees
+  @AddToCart
+  Scenario: Reduce the quantity in cart to zero
+    When user click button add on the dashboard page
+    And user see alert sucsess add to cart & click OK
+    And user click My Cart
+    Then user can see the product cart added
+    And user clik button minus to icrease the product
+    Then user can see the number of item increase
+
+#    ini juga tidak tahu gimana kalo elemennya udah kedelete assertnya apa
+  @AddToCart
+  Scenario: Remove 1 product(s) from the cart with the name <Product Name>
+    When user click button add on the dashboard page
+    And user see alert sucsess add to cart & click OK
+    And user click My Cart
+    Then user can see the product cart added
+    And user clik button delete product
+    Then user can see the product is remove
+
+  @AddToCart
+  Scenario: Remove 2 product(s) from the cart with index <index>
+
+  @AddToCart
+    Scenario: Remove product in the cart to 0
+
+
+
+
+
+
+
