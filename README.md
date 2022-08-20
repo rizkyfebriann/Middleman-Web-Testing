@@ -25,13 +25,12 @@
 
 # About The Project
 
-Description about project
-
+Middleman is a project for helping each store for buying some products for stock on distributor via online. In real case, many store that still doing manual for listing stock product, add / reduce for in/out stock product, take a notes for stock of their products. So therefore, Middleman is developed here trying for handle that behaviour user which changing from manual to all stock activity in online.
 
 
 ## Documentation
 
-[Documentation Test Scenario](Linknya nanti)
+[Documentation Test Scenario](https://docs.google.com/spreadsheets/d/1Gwh92ZN8FofC1UhqwhS0og6HGUn4PoWbazNqsxeQPnk/edit?usp=sharing)
 
 
 ## Web Manual Test Screenshot
@@ -85,37 +84,30 @@ Description about project
       
     
 
-
-
-
-
-
-
 ## Tech Stack 
 
-**Testing Tools for manual:**  
-- [Google Chrome (WEB Browser)](https://www.google.com/chrome/)
-- [Postman](https://www.postman.com/)
+**Manual Testing Tools:**  
+- [Google Chrome (Web Browser)](https://www.google.com/chrome/)
 
-**Testing Tools for automation:** 
+**Automation Testing Tools:** 
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 - [Java](https://www.java.com/)
 - [Gradle](https://gradle.org/)
-- [Google Chrome (WEB Browser)](https://www.google.com/chrome/)
+- [Google Chrome (Web Browser)](https://www.google.com/chrome/)
 
-**Framework for automation:**
+**Framework Used In Automation Testing:**
 - [Serenity BDD](https://serenity-bdd.info/)
 - [Cucumber](https://cucumber.io/)
 
 **Documentation Tools:** 
-- [Google spreadsheet](https://www.google.com/sheets/about/)
+- [Google Spreadsheet](https://www.google.com/sheets/about/)
 
 **Collaboration:**
 - [Trello (Work Management Tool)](https://trello.com/)
 - [GitHub (Version Control System Platform)](https://github.com/)
 - [Telegram](https://web.telegram.org/)
 - [Discord](https://discord.com/)
-
+- [Zoom](https://zoom.us/)
 
 
 ## Contacts
@@ -123,3 +115,5 @@ Description about project
 - [Nashuha Mahira](https://github.com/nshmahira)
 - [Ernawati](https://github.com/erna94)
 - [Rizky Febrian](https://github.com/rizkyfebriann)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
