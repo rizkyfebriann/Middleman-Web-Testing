@@ -70,12 +70,16 @@ public class MiddlemanCartStep extends BasePageObject {
 
     @And("user click button minus to decrease the product")
     public void userClickButtonMinusToDecreaseTheProduct() {
-        System.out.println("!");
-        // Simpan hasil nomor sebelumnya
 
+        // Simpan hasil nomor sebelumnya
+        int quantityBefore = middlemanCartPages.getProductCount(1);
         middlemanCartPages.minusProduct();
 
-        System.out.println("@");
+        // Simpan hasil sesudahnya
+        int quantityAfter = middlemanCartPages.getProductCount(1);
+
+        // dibandingkan kalau sesudah dan sebelumnya adalah berkurang 1
+        Assert.assertTrue(quantityAfter == quantityBefore - 1);
     }
 
 

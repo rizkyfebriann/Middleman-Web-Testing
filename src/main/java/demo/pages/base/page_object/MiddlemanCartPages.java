@@ -28,7 +28,9 @@ public class MiddlemanCartPages extends BasePageObject {
     // Ambil button minus berdasarkan textnya
     By elementBtnMinus = By.xpath("//button[text()=\"-\"]");
 
-    By elementProductQuantity = By.xpath("//button[text()=\"-\"][0]/../p");
+    // ini buat product quantity yang button pertama, di XPath /.. artinya naek ke atas jadi dia
+    // bakal ambil div nya
+    By elementProductQuantity = By.xpath("//button[text()=\"-\"][1]/../p");
 
     By elementBtnDelete = By.xpath("//*[@id=\"__next\"]/div/div[4]/div[1]/div/div[2]/button");
 
@@ -77,6 +79,12 @@ public class MiddlemanCartPages extends BasePageObject {
     }
 
     public int getProductCount(int index) {
-        return 0;
+        // ini sama kaya inspect di Chrome, buat dapetin elementnya
+        WebElement quantityElement = getDriver().findElement(elementProductQuantity);
+
+        // ambil textnya
+        String textQuantity = quantityElement.getText();
+        System.out.println("Text Quantity " +   textQuantity);
+        return Integer.parseInt(textQuantity);
     }
 }
