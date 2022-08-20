@@ -32,7 +32,11 @@ public class BasePageObject {
     }
 
     public void clickOn(By element) {
-        waitUntil(ExpectedConditions.elementToBeClickable(element), timeout);
+        clickOn(element, timeout);
+    }
+
+    public void clickOn(By element, int expectedTimeout) {
+        waitUntil(ExpectedConditions.elementToBeClickable(element), expectedTimeout);
         getDriver().findElement(element).click();
     }
 
@@ -109,47 +113,30 @@ public class BasePageObject {
     }
 
     public void alertSuccessEditProfile() {
-        wait(2000);
-        Alert successEditProfile = getDriver().switchTo().alert();
-        successEditProfile.accept();
-        wait(2000);
+        generalAlertAccept(2000);
     }
 
     public void alertNoSuccessEditProfile() {
-        wait(3000);
-        Alert noSuccessEditProfile = getDriver().switchTo().alert();
-        noSuccessEditProfile.accept();
-        wait(3000);
+        generalAlertAccept(3000);
     }
 
     public void alertEditEmailIncorrect() {
-        wait(2000);
-        Alert incorrectEmail = getDriver().switchTo().alert();
-        incorrectEmail.accept();
-        wait(2000);
+        generalAlertAccept(2000);
     }
 
     public void alertEditFieldIsEmpty() {
-        wait(2000);
-        Alert alert = getDriver().switchTo().alert();
-        alert.getText();
-        wait(2000);
+        generalAlertAccept(2000);
     }
 
     public void alertEditFieldEmptyEmail() {
-        wait(2000);
-        Alert alert = getDriver().switchTo().alert();
-        alert.getText();
+        generalAlertAccept(2000);
+    }
 
-//        WebElement emailAddress = getDriver().findElement(By.cssSelector("[name='emailAddress']"));
-//        String required = emailAddress.getAttribute("required");
-//        assertEquals(required, "true");
-//
-//        webdriver.switchTo().frame(iframeSwitch);
-//        wait.until(ExpectedConditions.elementToBeClickable(submit));
-//        WebElement submitbtn = webdriver.findElement(submit);
-//        submitbtn.click();
-        wait(2000);
+    public void generalAlertAccept(int timeout) {
+        wait(timeout);
+        Alert alert = getDriver().switchTo().alert();
+        alert.accept();
+        wait(timeout);
     }
 
 }
