@@ -10,7 +10,7 @@ Feature: Login
   @AddToCart
   Scenario: Add one product to the cart from the dashboard
     When user click button add on the dashboard page
-    And user see alert sucsess add to cart & click OK
+    And user see alert success add to cart & click OK
     And user click My Cart
     Then user can see the product cart added
 
@@ -18,7 +18,7 @@ Feature: Login
   @AddToCart
   Scenario: Add two product to the cart from the dashbord
     When user click button add on the dashboard page
-    And user see alert sucsess add to cart & click OK
+    And user see alert success add to cart & click OK
     And user add product2 to cart
     And user see alert sucsess add to cart & click OK
     And user click My Cart
@@ -37,41 +37,42 @@ Feature: Login
   @AddToCart
   Scenario: Add one product to the cart from button plus in page My Cart
     When user click button add on the dashboard page
-    And user see alert sucsess add to cart & click OK
+    And user see alert success add to cart & click OK
     And user click My Cart
     Then user can see the product cart added
-    And user clik button plus to add more item
-    Then user can see the number of item increase
+    And user clicks button plus
+    Then user can see the number of item updated
 
-# ini gimana loopingnya?
+# ini udah success
   @AddToCart
   Scenario: Add multyple product from page my cart page
     When user click button add on the dashboard page
-    And user see alert sucsess add to cart & click OK
+    And user see alert success add to cart & click OK
     And user click My Cart
     Then user can see the product cart added
-    And user clik button plus
-    Then user can see the number of item increase
+    # bikin dengan parameter dan looping
+    And user clicks button plus by 2
+    Then user can see the number of item updated
 
 #    Ini Gimana cek kondisinya biar deteksi stock productnya?
   @AddToCart
   Scenario: Add product to cart until exceeds stock product from my cart page
     When user click button add on the dashboard page
-    And user see alert sucsess add to cart & click OK
+    And user see alert success add to cart & click OK
     And user click My Cart
     Then user can see the product cart added
     And user clik button plus threed time
-    Then user can see the number of item increase
+    Then user can see the number of item updated
 
     # ini udah sucsees
   @AddToCart
   Scenario: Reduce one product quantity in my cart
     When user click button add on the dashboard page
-    And user see alert sucsess add to cart & click OK
+    And user see alert success add to cart & click OK
     And user click My Cart
     Then user can see the product cart added
-    And user user click button minus to decrease the product
-    Then user can see the number of item decreased
+    And user click button minus to decrease the product by 1
+    Then user can see the number of item updated
 
 
 # Success
@@ -83,7 +84,7 @@ Feature: Login
     And user click My Cart
     Then user can see the product cart added
     And user click button minus to decrease the product by 2
-    Then user can see the number of item decreased
+    Then user can see the number of item updated
 
 # ini belom sucsees
   @AddToCart
@@ -93,7 +94,7 @@ Feature: Login
     And user click My Cart
     Then user can see the product cart added
     And user click button minus to decrease the product
-    Then user can see the number of item decreased
+    Then user can see the number of item updated
 
 #    ini juga tidak tahu gimana kalo elemennya udah kedelete assertnya apa
   @AddToCart

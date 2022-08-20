@@ -51,14 +51,31 @@ public class MiddlemanCartStep extends BasePageObject {
         middlemanCartPages.isSuccessSeeAddToCart();
     }
 
-    @Then("user can see the number of item decreased")
-    public void userCanSeeTheNumberOfItemDecreased() {
+    @Then("user can see the number of item updated")
+    public void userCanSeeTheNumberOfItemUpdated() {
         middlemanCartPages.textItemIncrease();
     }
 
-    @And("user clik button plus")
+    @And("user clicks button plus")
     public void userClikButtonPlus() {
-        middlemanCartPages.plusProduct();
+        // panggil userClikButtonPlusMultipleTimes dengan parameter 1 supaya terpanggil assertionnya
+        userClikButtonPlusMultipleTimes(1);
+    }
+
+    @And("user clicks button plus by {int}")
+    public void userClikButtonPlusMultipleTimes(int numberOfAddedQuantity) {
+        // Simpan hasil nomor sebelumnya
+        int quantityBefore = middlemanCartPages.getProductCount(1);
+
+        for(int i = 0;i<numberOfAddedQuantity;i++) {
+            middlemanCartPages.plusProduct();
+        }
+
+        // Simpan hasil sesudahnya
+        int quantityAfter = middlemanCartPages.getProductCount(1);
+
+        // dibandingkan kalau sesudah dan sebelumnya adalah bertambah sesuai dengan numberOfAddedQuantity
+        Assert.assertTrue(quantityAfter == quantityBefore + numberOfAddedQuantity);
     }
 
     @And("user clik button plus threed time")
@@ -79,6 +96,7 @@ public class MiddlemanCartStep extends BasePageObject {
     @And("user click button minus to decrease the product")
     public void userClickButtonMinusToDecreaseTheProduct() {
         // memanggil fungsi dengan parameter, tapi karena kita hanya mengurangi 1, di berikan parameter 1 saja
+        // ini di gunakan supaya assertionnya jalan
         userClickButtonMinusToDecreaseTheProduct(1);
     }
 
@@ -94,7 +112,7 @@ public class MiddlemanCartStep extends BasePageObject {
         // Simpan hasil sesudahnya
         int quantityAfter = middlemanCartPages.getProductCount(1);
 
-        // dibandingkan kalau sesudah dan sebelumnya adalah berkurang 1
+        // dibandingkan kalau sesudah dan sebelumnya adalah berkurang sesuai dengan numberOfDecreasedQuantity
         Assert.assertTrue(quantityAfter == quantityBefore - numberOfDecreasedQuantity);
     }
 
