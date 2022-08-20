@@ -79,7 +79,7 @@ public class MiddlemanUserStep1 {
     }
     @Then("user stay in the pop up edit profile")
     public void userStayInThePopUpEditProfile() {
-        middlemanUserPages.isStillOnPopUpEdit();
+        Assert.assertTrue(middlemanUserPages.isStillOnPopUpEdit());
     }
 
     @And("user see alert your email not failed & click OK")
