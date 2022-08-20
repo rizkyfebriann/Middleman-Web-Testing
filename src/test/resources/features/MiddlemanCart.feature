@@ -70,17 +70,19 @@ Feature: Login
     And user see alert sucsess add to cart & click OK
     And user click My Cart
     Then user can see the product cart added
-    And user clik button minus
-    Then user can see the number of item is reduced
+    And user user click button minus to decrease the product
+    Then user can see the number of item decreased
 
-# 6:19 Bisa kurangin barangnya skrg, skrg kerjain assertion
+
+# Success
+# Kurangi product dengan dua quantity
   @AddToCart
   Scenario: Reduce the quantity in cart with two product
-    When user click button add on the dashboard page
-    And user see alert success add to cart & click OK
+    # ditambah 2 karena akan di kurangi 2 pula
+    When user click button add on the dashboard page by 2
     And user click My Cart
     Then user can see the product cart added
-    And user click button minus to decrease the product
+    And user click button minus to decrease the product by 2
     Then user can see the number of item decreased
 
 # ini belom sucsees

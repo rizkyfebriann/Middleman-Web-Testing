@@ -19,8 +19,16 @@ public class MiddlemanCartStep extends BasePageObject {
         middlemanCartPages.clickBtnAdd();
     }
 
+    @When("user click button add on the dashboard page by {int}")
+    public void userClickButtonAddOnTheDashboardPageMultipleTimes(int numberOfClicks) throws InterruptedException {
+        for(int i = 0;i<numberOfClicks;i++) {
+            middlemanCartPages.clickBtnAdd();
+            middlemanCartPages.alertSuccessfullyAddtoCart();
+        }
+    }
+
     @And("user see alert success add to cart & click OK")
-    public void userSeeAlertSucsessAddToCartClickOK() throws InterruptedException{
+    public void userSeeAlertSucsessAddToCartClickOK() throws InterruptedException {
         middlemanCartPages.alertSuccessfullyAddtoCart();
     }
     @And("user add product to cart")
@@ -70,18 +78,25 @@ public class MiddlemanCartStep extends BasePageObject {
 
     @And("user click button minus to decrease the product")
     public void userClickButtonMinusToDecreaseTheProduct() {
+        // memanggil fungsi dengan parameter, tapi karena kita hanya mengurangi 1, di berikan parameter 1 saja
+        userClickButtonMinusToDecreaseTheProduct(1);
+    }
 
+    @And("user click button minus to decrease the product by {int}")
+    public void userClickButtonMinusToDecreaseTheProduct(int numberOfDecreasedQuantity) {
         // Simpan hasil nomor sebelumnya
         int quantityBefore = middlemanCartPages.getProductCount(1);
-        middlemanCartPages.minusProduct();
+
+        for(int i=0;i<numberOfDecreasedQuantity;i++) {
+            middlemanCartPages.minusProduct();
+        }
 
         // Simpan hasil sesudahnya
         int quantityAfter = middlemanCartPages.getProductCount(1);
 
         // dibandingkan kalau sesudah dan sebelumnya adalah berkurang 1
-        Assert.assertTrue(quantityAfter == quantityBefore - 1);
+        Assert.assertTrue(quantityAfter == quantityBefore - numberOfDecreasedQuantity);
     }
-
 
 
     @And("user click button delete product")
