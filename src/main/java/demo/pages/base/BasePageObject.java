@@ -45,6 +45,11 @@ public class BasePageObject {
         return getDriver().findElement(element).isDisplayed();
     }
 
+    public boolean isPresentWithDelay(By element, int delay) {
+        wait(delay);
+        return isPresent(element);
+    }
+
     public void scrollDown() {
         wait(2000);
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
