@@ -78,7 +78,7 @@ Feature: Login
 #    And user input data phone number "081234111111"
 #    And user input data address "jalan cinta"
     And user click edit button
-    Then user see alert on name field for filling name
+    Then user see agilert on name field for filling name
 
 
 
