@@ -102,22 +102,6 @@ Feature: Login
     Then user stay in the pop up edit profile
 
   @user
-  Scenario: Cancel delete user
-    When user open page my profile and click button delete
-    And user can see pop up verifikasi delete
-    And user choose button no
-    Then user should be redirect to page my profile
-
-#    Dijalankan Ganti Login
-  @user
-  Scenario: Delete user with already registed
-    When user open page my profile and click button delete
-    And user can see pop up verifikasi delete
-    And user choose button yes
-    And user see alert success delete data and klik ok
-    Then user can see redirect to login page
-
-  @user
   Scenario: Update user with name shop using one characters
     When user open page my profile and click button edit
     And user can see pop up edit profile
@@ -133,6 +117,22 @@ Feature: Login
     And user input data name with one char "eee"
     And user click edit button
     And user can see sucsess edit profile and klik ok
+
+  @user
+  Scenario: Cancel delete user
+    When user open page my profile and click button delete
+    And user can see pop up verifikasi delete
+    And user choose button no
+    Then user should be redirect to page my profile
+
+#    Dijalankan Ganti Login
+  @user
+  Scenario: Delete user with already registed
+    When user open page my profile and click button delete
+    And user can see pop up verifikasi delete
+    And user choose button yes
+    And user see alert success delete data and klik ok
+    Then user can see redirect to login page
 
 
 
