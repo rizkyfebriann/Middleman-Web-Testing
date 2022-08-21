@@ -57,7 +57,7 @@ public class BasePageObject {
     public void scrollDown() {
         wait(2000);
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
-        js.executeScript("window.scrollTo(0, 400)");
+        js.executeScript("window.scrollTo(0, 800)");
     }
 
     public void moveToTab(int index) {
@@ -171,5 +171,12 @@ public class BasePageObject {
         wait(2000);
         Alert errorWrongInputProductAdmin = getDriver().switchTo().alert();
         errorWrongInputProductAdmin.accept();
+    }
+
+    public void alertSuccessCreateOrder() {
+        wait(2000);
+        Alert successOrder = getDriver().switchTo().alert();
+        successOrder.accept();
+        wait(2000);
     }
 }

@@ -19,7 +19,7 @@ public class WebdriverInstance {
         options.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
         webdriver = new ChromeDriver(options);
         webdriver.manage().window().maximize();
-        webdriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        webdriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         webdriver.get("https://middleman-alta.vercel.app/auth/login");
         webdriver.manage().deleteAllCookies();
     }
