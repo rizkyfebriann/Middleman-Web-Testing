@@ -77,7 +77,7 @@ Feature: Login
     And user click button minus to decrease the product by 2
     Then user can see the number of item updated
 
-#  Success, check kalo dah di satu bisa di click lagi atau tidak
+#  Belom jalan 100%, check kalo dah di satu bisa di click lagi atau tidak
   # Di UI tidak akan pernah sampai 0
   @AddToCart
   Scenario: Reduce the quantity in cart to zero
@@ -87,9 +87,9 @@ Feature: Login
     Then user can see the product cart added
     # ini implementasi untuk menginginkan jumlah tertentu
     And user click button minus to decrease the product to 1
-    # kalau sudah 1, tidak akan bisa di click lagi
+    # kalau sudah 1, tidak akan bisa di click lagi, ini masih gagal dikit
     Then user should not be able to click minus at quantity one
-    
+
 
  # success
   @AddToCart

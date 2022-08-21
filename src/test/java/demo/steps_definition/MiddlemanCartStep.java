@@ -164,11 +164,12 @@ public class MiddlemanCartStep extends BasePageObject {
         // Simpan hasil sesudahnya
         int quantityText = middlemanCartPages.getProductCount(1);
 
-        // assert apakah quantityAfter sesuai dengan numberOfNewQuantity yang di inginkan
+        // assert apakah quantityAfter adalah satu, karena hanya ketika quantity satu, kita tidak bisa delete lagi
         Assert.assertTrue(quantityText == 1);
 
         // assert kalau buttonnya disabled di quantity satu
-        Assert.assertTrue(middlemanCartPages.checkIfUserCanClickMinusButton());
+        // harusnya ini tidak bisa di click, tapi skrg masih bisa, jadi masih ada bug di sini
+        Assert.assertFalse(middlemanCartPages.checkIfUserCanClickMinusButton());
 
     }
 }
