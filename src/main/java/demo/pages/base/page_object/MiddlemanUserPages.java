@@ -20,7 +20,11 @@ public class MiddlemanUserPages extends BasePageObject {
     By elementBtnEditProfile = By.id("open-modal");
     By elemenModalBoxEditProfile = By.xpath("(//div[@class='modal-box'])[3]");
     By elemenEditBtnProfile = By.xpath("//*[@id=\"btn-edit\"]");
-
+    By elementBtnDeleteProfile = By.xpath("//label[contains(text(),'delete')]");
+    By elemenModalBoxDeleteProfile = By.xpath("//*[@id=\"__next\"]/div[4]/div");
+    By elementBtnYesDeleteProfile = By.id("btn-delete");
+    By elementLogoImageHalamanLogin = By.xpath("//*[@id=\"__next\"]/div/div/div[1]/div[1]/span/img");
+    By elementBtnNoDeleteProfile = By.xpath("//label[contains(text(),'No')]");
 
     public void inputNameClear(String name) {
         getDriver().findElement(elementInputName).clear();
@@ -85,4 +89,29 @@ public class MiddlemanUserPages extends BasePageObject {
         wait(2500);
         return isPresent(elemenModalBoxEditProfile);
     }
+    public void clickButtonDeleteProfile() {
+//        waitUntil(ExpectedConditions.elementToBeClickable(elementBtnCircleMyProfile), timeout);
+        clickOn(elementBtnDeleteProfile);
+    }
+
+    public boolean alertModalBoxDeleteProfile() {
+        wait(2500);
+        return isPresent(elemenModalBoxDeleteProfile);
+    }
+    public void clickButtonYesDeleteProfile() {
+        clickOn(elementBtnYesDeleteProfile);
+    }
+    public boolean isRedirecToLoginPage() {
+        wait(1000);
+        return isPresent(elementLogoImageHalamanLogin);
+    }
+
+    public void clickBtnNoDeleteProfile() {
+       clickOn(elementBtnNoDeleteProfile);
+    }
+    public boolean  isSuccessBackToPageMyProfile() {
+        wait(2000);
+        return isPresent(elementLabelDashboardMyProfile);
+    }
+
 }

@@ -6,7 +6,7 @@ Feature: Login
     And user see alert login success & click OK
     Then user success login
 
-#    ini udah success
+# success
   @AddToCart
   Scenario: Add one product to the cart from the dashboard
     When user click button add on the dashboard page
@@ -14,7 +14,7 @@ Feature: Login
     And user click My Cart
     Then user can see the product cart added
 
-#   Ini udah success
+# success
   @AddToCart
   Scenario: Add two product to the cart from the dashbord
     # menggunakan loop untuk menambah beberapa kali dari dashboard
@@ -24,7 +24,7 @@ Feature: Login
     Then user can see the product cart added
 
 
-# ini udah sucsees
+# sucsees
   @AddToCart
   Scenario: Add one product to the cart from button plus in page My Cart
     When user click button add on the dashboard page
@@ -34,7 +34,7 @@ Feature: Login
     And user clicks button plus
     Then user can see the number of item updated
 
-# ini udah success
+# success
   @AddToCart
   Scenario: Add multyple product from page my cart page
     When user click button add on the dashboard page
@@ -45,7 +45,7 @@ Feature: Login
     And user clicks button plus by 2
     Then user can see the number of item updated
 
-#    Ini Gimana cek kondisinya biar deteksi stock productnya?
+#    Belum tau cek kondisi biar deteksi stock product karna jmlah stok ga stabil?
   @AddToCart
   Scenario: Add product to cart until exceeds stock product from my cart page
     When user click button add on the dashboard page
@@ -55,9 +55,9 @@ Feature: Login
     And user clik button plus threed time
     Then user can see the number of item updated
 
-    # ini udah sucsees
+# sucsees
   @AddToCart
-  Scenario: Reduce one product quantity in my cart
+  Scenario: Update reduce one product quantity in my cart
     When user click button add on the dashboard page
     And user see alert success add to cart & click OK
     And user click My Cart
@@ -69,7 +69,7 @@ Feature: Login
 # Success
 # Kurangi product dengan dua quantity
   @AddToCart
-  Scenario: Reduce the quantity in cart with two product
+  Scenario: Update reduce the quantity in cart with two product
     # ditambah 2 karena akan di kurangi 2 pula nanti
     When user click button add on the dashboard page by 2
     And user click My Cart
@@ -77,44 +77,44 @@ Feature: Login
     And user click button minus to decrease the product by 2
     Then user can see the number of item updated
 
-#  Success, check kalo dah di satu bisa di click lagi atau tidak
+#  Belom jalan 100%, check kalo dah di satu bisa di click lagi atau tidak
   # Di UI tidak akan pernah sampai 0
   @AddToCart
-  Scenario: Reduce the quantity in cart to zero
+  Scenario: Update Reduce the quantity in cart to zero
     When user click button add on the dashboard page
     And user see alert success add to cart & click OK
     And user click My Cart
     Then user can see the product cart added
     # ini implementasi untuk menginginkan jumlah tertentu
     And user click button minus to decrease the product to 1
-    # kalau sudah 1, tidak akan bisa di click lagi
+    # kalau sudah 1, tidak akan bisa di click lagi, ini masih gagal dikit
     Then user should not be able to click minus at quantity one
 
-# ini udah success
+
+ # success
   @AddToCart
   Scenario: Remove 1 product(s) from the cart
     When user click button add on the dashboard page
     And user see alert success add to cart & click OK
     And user click My Cart
     Then user can see the product cart added
-    And user click button delete product
+    # di dalam step ini di assert apakah title yang di index yang didelete tetap ada
+    # setelah productnya di hilangkan
+    And user click button delete product at index 1
     Then user can see the product is removed
 
-#    ini juga tidak tahu gimana kalo elemennya udah kedelete assertnya apa
-  @AddToCart
-  Scenario: Remove 1 product(s) from the cart with the name <Product Name>
-    When user click button add on the dashboard page
-    And user see alert success add to cart & click OK
-    And user click My Cart
-    Then user can see the product cart added
-    And user click button delete product
-    Then user can see the product is removed
+#    Belum success
+#  @AddToCart
+#  Scenario: Remove 2 product(s) from the cart
+#    When user click button add on the dashboard page
+#    And user see alert success add to cart & click OK
+#    And user click My Cart
+#    Then user can see the product cart added
+#    And user click button delete product at index 1
+#    Then user can see the product is removed
 
-  @AddToCart
-  Scenario: Remove 2 product(s) from the cart with index <index>
-
-  @AddToCart
-    Scenario: Remove product in the cart to 0
+#  @AddToCart
+#    Scenario: Remove product in the cart to 0
 
 
 

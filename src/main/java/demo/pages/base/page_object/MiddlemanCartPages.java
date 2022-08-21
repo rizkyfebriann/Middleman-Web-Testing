@@ -78,6 +78,29 @@ public class MiddlemanCartPages extends BasePageObject {
         clickOn(elementBtnDelete);
     }
 
+    public void deleteProductAtIndex(int index) {
+        String xpathForDeleteButton = "//div/button[text()='Delete'][" + index + "]";
+        By elementDeleteButtonAtIndex = By.xpath(xpathForDeleteButton);
+
+        // skrg click Delete untuk hilangkan
+        clickOn(elementDeleteButtonAtIndex);
+        generalAlertAccept(2000);
+    }
+
+    public String getTitleForProductAtIndex(int index) {
+        // ini bakal memproduksi contohnya kalo index = 1
+        // XPATH = //div/button[text()='Delete'][1]/../../h1
+        // Coba di console dengan
+        // $x("//div/button[text()='Delete'][1]/../../h1")
+        String xpathForProductTitle = "//div/button[text()='Delete'][" + index + "]" + "/../../h1";
+        By elementProductTitleAtIndex = By.xpath(xpathForProductTitle);
+
+        WebElement productTitleElement = getDriver().findElement(elementProductTitleAtIndex);
+        String productTitle = productTitleElement.getText();
+
+        return productTitle;
+    }
+
     public int getProductCount(int index) {
         // ini sama kaya inspect di Chrome, buat dapetin elementnya
         WebElement quantityElement = getDriver().findElement(elementProductQuantity);

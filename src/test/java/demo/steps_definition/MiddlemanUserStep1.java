@@ -112,12 +112,12 @@ public class MiddlemanUserStep1 {
         middlemanUserPages.inputPhoneClear(phone);
     }
 
-    @Then("user can see pop up alert please fill out this field")
-    public void userCanSeePopUpAlertPleaseFillOutThisField() {
-//        Assert.assertTrue(middlemanUserPages.isStillOnFieldEmail());
-
-
-    }
+//    @Then("user can see pop up alert please fill out this field")
+//    public void userCanSeePopUpAlertPleaseFillOutThisField() {
+////        Assert.assertTrue(middlemanUserPages.isStillOnFieldEmail());
+//
+//
+//    }
 
     @And("user input data empty address {string}")
     public void userInputDataEmptyAddress(String address) {
@@ -125,6 +125,41 @@ public class MiddlemanUserStep1 {
 
     }
 
+    @When("user open page my profile and click button delete")
+    public void userOpenPageMyProfileAndClickButtonDelete() {
+        middlemanUserPages.clickButtonDeleteProfile();
+    }
+
+    @And("user can see pop up verifikasi delete")
+    public void userCanSeePopUpVerifikasiDelete() {
+        middlemanUserPages.alertModalBoxDeleteProfile() ;
+    }
+
+    @And("user choose button yes")
+    public void userChooseButtonYes() {
+        middlemanUserPages.clickButtonYesDeleteProfile() ;
+    }
+
+    @And("user see alert success delete data and klik ok")
+    public void userSeeAlertSuccessDeleteDataAndKlikOk() {
+        middlemanUserPages.generalAlertAccept(2000);
+    }
+
+    @Then("user can see redirect to login page")
+    public void userCanSeeRedirectToLoginPage() {
+        Assert.assertTrue(middlemanUserPages.isRedirecToLoginPage());
+       }
+
+    @And("user choose button no")
+    public void userChooseButtonNo() {
+        middlemanUserPages.clickBtnNoDeleteProfile();
+    }
+
+    @Then("user should be redirect to page my profile")
+    public void userShouldBeRedirectToPageMyProfile() {
+        middlemanUserPages.isSuccessBackToPageMyProfile();
+    }
+}
 
 
 //    @And("user input name {string}")
@@ -173,4 +208,4 @@ public class MiddlemanUserStep1 {
 //    }
 
 
-}
+

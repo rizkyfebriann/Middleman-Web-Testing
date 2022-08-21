@@ -136,9 +136,20 @@ public class MiddlemanCartStep extends BasePageObject {
     }
 
 
-    @And("user click button delete product")
-    public void userClikButtonDeleteProduct() {
-        middlemanCartPages.deleteButton();
+    @And("user click button delete product at index {int}")
+    public void userClickButtonDeleteProduct(int indexToDelete) {
+        // ambil judul sebelum di delete di index yang di berikan
+        String productTitleAtIndexBefore = middlemanCartPages.getTitleForProductAtIndex(indexToDelete);
+
+        middlemanCartPages.deleteProductAtIndex(indexToDelete);
+
+
+        // setelah di delete harusnya skrg product titlenya berbeda di index yang sama
+        // karena judul yang lama sudah di delete
+        String productTitleAtIndexAfter = middlemanCartPages.getTitleForProductAtIndex(indexToDelete);
+
+        // mari kita bandingkan kalau mereka tidak sama
+        Assert.assertTrue(productTitleAtIndexBefore != productTitleAtIndexAfter);
     }
 
     @Then("user can see the product is removed")
@@ -153,11 +164,12 @@ public class MiddlemanCartStep extends BasePageObject {
         // Simpan hasil sesudahnya
         int quantityText = middlemanCartPages.getProductCount(1);
 
-        // assert apakah quantityAfter sesuai dengan numberOfNewQuantity yang di inginkan
+        // assert apakah quantityAfter adalah satu, karena hanya ketika quantity satu, kita tidak bisa delete lagi
         Assert.assertTrue(quantityText == 1);
 
         // assert kalau buttonnya disabled di quantity satu
-        Assert.assertTrue(middlemanCartPages.checkIfUserCanClickMinusButton());
+        // harusnya ini tidak bisa di click, tapi skrg masih bisa, jadi masih ada bug di sini
+        Assert.assertFalse(middlemanCartPages.checkIfUserCanClickMinusButton());
 
     }
 }
