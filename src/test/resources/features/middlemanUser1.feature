@@ -23,7 +23,7 @@ Feature: Login
 
   @user
   Scenario: Update user with all valid data on json file1
-    When user click button edit
+    When user open page my profile and click button edit
     And user can see pop up edit profile
     And user input data name "toko ernawt123"
     And user input data email "ernatoko1@gmail.com"
@@ -35,7 +35,7 @@ Feature: Login
 #    BUG
   @user
   Scenario: Update user with phone number not valid
-    When user click button edit
+    When user open page my profile and click button edit
     And user can see pop up edit profile
     And user input data name "toko ernawt123"
     And user input data email "ernatoko1@gmail.com"
@@ -48,7 +48,7 @@ Feature: Login
 
   @user
   Scenario: Update user with already registered email
-    When user click button edit
+    When user open page my profile and click button edit
     And user can see pop up edit profile
     And user input data name "toko coba2"
     And user input data email "tokocobalagi12@gmail.com"
@@ -60,7 +60,7 @@ Feature: Login
 
   @user
   Scenario: Update user with email not valid
-    When user click button edit
+    When user open page my profile and click button edit
     And user can see pop up edit profile
     And user input data name "toko ernawt123"
     And user input data email "ernatoko1gmail.com"
@@ -71,14 +71,38 @@ Feature: Login
 
   @user
   Scenario: Update user with empty name
-    When user click button edit
+    When user open page my profile and click button edit
     And user can see pop up edit profile
-    And user input data empty name " "
-#    And user input data email "ernatoko1@gmail.com"
-#    And user input data phone number "081234111111"
-#    And user input data address "jalan cinta"
+    And user input data empty name ""
     And user click edit button
-    Then user see alert on name field for filling name
+    Then user stay in the pop up edit profile
+
+  @user
+  Scenario: Update user with empty email
+    When user open page my profile and click button edit
+    And user can see pop up edit profile
+    And user input data empty email ""
+    And user click edit button
+    Then user stay in the pop up edit profile
+
+  @user
+  Scenario: Update user with empty phone
+    When user open page my profile and click button edit
+    And user can see pop up edit profile
+    And user input data empty phone number ""
+    And user click edit button
+    Then user stay in the pop up edit profile
+
+  @user
+  Scenario: Update user with empty address
+    When user open page my profile and click button edit
+    And user can see pop up edit profile
+    And user input data empty address ""
+    And user click edit button
+    Then user stay in the pop up edit profile
+
+
+
 
 
 

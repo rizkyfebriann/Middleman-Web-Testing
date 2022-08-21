@@ -32,7 +32,11 @@ public class BasePageObject {
     }
 
     public void clickOn(By element) {
-        waitUntil(ExpectedConditions.elementToBeClickable(element), timeout);
+        clickOn(element, timeout);
+    }
+
+    public void clickOn(By element, int expectedTimeout) {
+        waitUntil(ExpectedConditions.elementToBeClickable(element), expectedTimeout);
         getDriver().findElement(element).click();
     }
 
@@ -43,6 +47,11 @@ public class BasePageObject {
 
     public boolean isPresent(By element) {
         return getDriver().findElement(element).isDisplayed();
+    }
+
+    public boolean isPresentWithDelay(By element, int delay) {
+        wait(delay);
+        return isPresent(element);
     }
 
     public void scrollDown() {
@@ -104,23 +113,43 @@ public class BasePageObject {
     }
 
     public void alertSuccessEditProfile() {
-        wait(2000);
-        Alert successEditProfile = getDriver().switchTo().alert();
-        successEditProfile.accept();
-        wait(2000);
+        generalAlertAccept(2000);
     }
 
     public void alertNoSuccessEditProfile() {
-        wait(3000);
-        Alert noSuccessEditProfile = getDriver().switchTo().alert();
-        noSuccessEditProfile.accept();
-        wait(3000);
+        generalAlertAccept(3000);
     }
 
     public void alertEditEmailIncorrect() {
-        wait(2000);
-        Alert incorrectEmail = getDriver().switchTo().alert();
-        incorrectEmail.accept();
-        wait(2000);
+        generalAlertAccept(2000);
+    }
+
+    public void alertEditFieldIsEmpty() {
+        generalAlertAccept(2000);
+    }
+
+    public void alertEditFieldEmptyEmail() {
+        generalAlertAccept(2000);
+    }
+
+    public void generalAlertAccept(int timeout) {
+        wait(timeout);
+        Alert alert = getDriver().switchTo().alert();
+
+        alert.accept();
+        wait(timeout);
+    }
+
+//    public void alertSuccessAddToCart() {
+//        wait(2000);
+//        Alert alert = getDriver().switchTo().alert();
+//        alert.getText();
+//        wait(2000);
+//    }
+
+    public void alertSuccessAddToCart() throws InterruptedException {
+        Thread.sleep(2000);
+        Alert successAddtoCart = getDriver().switchTo().alert();
+        successAddtoCart.accept();
     }
 }
