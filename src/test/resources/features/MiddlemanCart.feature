@@ -14,24 +14,15 @@ Feature: Login
     And user click My Cart
     Then user can see the product cart added
 
-#    ini tidak mengerti ngulangnya gimana kalo dari dashboard
+#   Ini udah success
   @AddToCart
   Scenario: Add two product to the cart from the dashbord
-    When user click button add on the dashboard page
-    And user see alert success add to cart & click OK
-    And user add product2 to cart
-    And user see alert sucsess add to cart & click OK
+    # menggunakan loop untuk menambah beberapa kali dari dashboard
+    # step ini sudah menghandle alertnya dalam loop jadi tidak perlu mengecheck untuk alert
+    When user click button add on the dashboard page by 2
     And user click My Cart
     Then user can see the product cart added
 
-#  @AddToCart
-#  Scenario: Add multyple product To Cart from the dashbord page
-#    When user click button add on the dashboard page
-#    And user see alert sucsess add to cart & click OK
-#    And user click My Cart
-#    Then user can see the product cart added
-#    And user clik button plus to add more item
-#    Then user can see the number of item increase
 
 # ini udah sucsees
   @AddToCart

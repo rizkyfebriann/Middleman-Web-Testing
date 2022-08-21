@@ -36,11 +36,6 @@ public class MiddlemanCartStep extends BasePageObject {
         middlemanCartPages.clickBtnAdd();
     }
 
-    @And("user add product2 to cart")
-    public void userAddProduct2ToCart() {
-        middlemanCartPages.clickBtnAdd();
-    }
-
     @And("user click My Cart")
     public void userClickMyCart() {
         middlemanCartPages.clickMyCart();
