@@ -135,9 +135,15 @@ public class BasePageObject {
     public void generalAlertAccept(int timeout) {
         wait(timeout);
         Alert alert = getDriver().switchTo().alert();
-
         alert.accept();
         wait(timeout);
+    }
+
+    public void generalAlertAccept2() {
+        wait(2000);
+        Alert alert = getDriver().switchTo().alert();
+        alert.accept();
+        wait(2000);
     }
 
 //    public void alertSuccessAddToCart() {

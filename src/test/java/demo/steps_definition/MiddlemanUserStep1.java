@@ -68,8 +68,8 @@ public class MiddlemanUserStep1 {
     public void userInputDataAddress(String address) {
         middlemanRegisterPages.inputAddress(address);
     }
-    @Then("user can se sucsess edit profile and klik ok")
-    public void userCanSeSucsessEditProfile() {
+    @Then("user can see sucsess edit profile and klik ok")
+    public void userCanSeeSucsessEditProfile() {
         middlemanUserPages.alertSuccessfullyEditProfile();
     }
 
@@ -158,6 +158,16 @@ public class MiddlemanUserStep1 {
     @Then("user should be redirect to page my profile")
     public void userShouldBeRedirectToPageMyProfile() {
         middlemanUserPages.isSuccessBackToPageMyProfile();
+    }
+
+    @And("user input data name with one char {string}")
+    public void userInputDataNameWithOneChar(String name) {
+        middlemanUserPages.inputNameClear(name);
+    }
+
+    @And("user see alert name minimal format two character & click OK")
+    public void userSeeAlertNameMinimalFormatTwoCharacterClickOK() {
+        middlemanUserPages.generalAlertAccept2();
     }
 }
 

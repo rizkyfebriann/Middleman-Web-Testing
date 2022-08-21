@@ -1,7 +1,7 @@
 @Web
 Feature: Login
   Background: login user with registered valid email & valid password
-    Given user input email "tokocobacoba22@gmail.com" and password "coba2123"
+    Given user input email "tokocobacoba23@gmail.com" and password "coba2123"
     And user click on login button
     And user see alert login success & click OK
     Then user success login
@@ -30,7 +30,7 @@ Feature: Login
     And user input data phone number "081234566661"
     And user input data address "jalan cinta"
     And user click edit button
-    Then user can se sucsess edit profile and klik ok
+    Then user can see sucsess edit profile and klik ok
 
 #    BUG
   @user
@@ -94,7 +94,7 @@ Feature: Login
     Then user stay in the pop up edit profile
 
   @user
-  Scenario: Update user with empty address
+    Scenario: Update user with empty address
     When user open page my profile and click button edit
     And user can see pop up edit profile
     And user input data empty address ""
@@ -116,6 +116,23 @@ Feature: Login
     And user choose button yes
     And user see alert success delete data and klik ok
     Then user can see redirect to login page
+
+  @user
+  Scenario: Update user with name shop using one characters
+    When user open page my profile and click button edit
+    And user can see pop up edit profile
+    And user input data name with one char "e"
+    And user click edit button
+    And user see alert name minimal format two character & click OK
+#    Then user stay in the pop up edit profile
+
+  @user
+  Scenario: Update user with name shop using 2 characters or more
+    When user open page my profile and click button edit
+    And user can see pop up edit profile
+    And user input data name with one char "eee"
+    And user click edit button
+    And user can see sucsess edit profile and klik ok
 
 
 
