@@ -84,7 +84,7 @@ public class MiddlemanCartPages extends BasePageObject {
 
         // skrg click Delete untuk hilangkan
         clickOn(elementDeleteButtonAtIndex);
-        generalAlertAccept(2000);
+        generalAlertAccept2();
     }
 
     public String getTitleForProductAtIndex(int index) {
