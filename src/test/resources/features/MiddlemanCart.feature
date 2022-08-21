@@ -89,8 +89,9 @@ Feature: Login
     And user click button minus to decrease the product to 1
     # kalau sudah 1, tidak akan bisa di click lagi
     Then user should not be able to click minus at quantity one
+    
 
-#  Success
+ # success
   @AddToCart
   Scenario: Remove 1 product(s) from the cart
     When user click button add on the dashboard page
