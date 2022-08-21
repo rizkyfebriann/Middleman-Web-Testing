@@ -90,14 +90,16 @@ Feature: Login
     # kalau sudah 1, tidak akan bisa di click lagi
     Then user should not be able to click minus at quantity one
 
-#    ini juga tidak tahu gimana kalo elemennya udah kedelete assertnya apa
+#  Success
   @AddToCart
-  Scenario: Remove 1 product(s) from the cart with the name <Product Name>
+  Scenario: Remove 1 product(s) from the cart
     When user click button add on the dashboard page
     And user see alert success add to cart & click OK
     And user click My Cart
     Then user can see the product cart added
-    And user click button delete product
+    # di dalam step ini di assert apakah title yang di index yang didelete tetap ada
+    # setelah productnya di hilangkan
+    And user click button delete product at index 1
     Then user can see the product is removed
 
   @AddToCart

@@ -136,9 +136,20 @@ public class MiddlemanCartStep extends BasePageObject {
     }
 
 
-    @And("user click button delete product")
-    public void userClikButtonDeleteProduct() {
-        middlemanCartPages.deleteButton();
+    @And("user click button delete product at index {int}")
+    public void userClickButtonDeleteProduct(int indexToDelete) {
+        // ambil judul sebelum di delete di index yang di berikan
+        String productTitleAtIndexBefore = middlemanCartPages.getTitleForProductAtIndex(indexToDelete);
+
+        middlemanCartPages.deleteProductAtIndex(indexToDelete);
+
+
+        // setelah di delete harusnya skrg product titlenya berbeda di index yang sama
+        // karena judul yang lama sudah di delete
+        String productTitleAtIndexAfter = middlemanCartPages.getTitleForProductAtIndex(indexToDelete);
+
+        // mari kita bandingkan kalau mereka tidak sama
+        Assert.assertTrue(productTitleAtIndexBefore != productTitleAtIndexAfter);
     }
 
     @Then("user can see the product is removed")
