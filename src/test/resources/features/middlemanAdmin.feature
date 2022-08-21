@@ -51,7 +51,7 @@ Feature: admins
     And user input data price "5000"
     And user click on button add
     And user see alert internal error add product & click OK
-#    Then user can back to dashboard
+    Then user can back to dashboard
 
   @AddProductAdmin @Negative
   Scenario: Add product admin to dashboard with empty image product field
