@@ -89,14 +89,15 @@ Feature: Login
 #  Success, check kalo dah di satu bisa di click lagi atau tidak
   # Di UI tidak akan pernah sampai 0
   @AddToCart
-  Scenario: Reduce the quantity in cart to one
+  Scenario: Reduce the quantity in cart to zero
     When user click button add on the dashboard page
     And user see alert success add to cart & click OK
     And user click My Cart
     Then user can see the product cart added
     # ini implementasi untuk menginginkan jumlah tertentu
     And user click button minus to decrease the product to 1
-    Then user can see the number of item updated
+    # kalau sudah 1, tidak akan bisa di click lagi
+    Then user should not be able to click minus at quantity one
 
 #    ini juga tidak tahu gimana kalo elemennya udah kedelete assertnya apa
   @AddToCart

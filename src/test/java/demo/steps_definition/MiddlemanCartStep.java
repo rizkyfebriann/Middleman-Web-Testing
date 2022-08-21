@@ -150,5 +150,20 @@ public class MiddlemanCartStep extends BasePageObject {
     public void userCanSeeTheProductIsRemoved() {
         middlemanCartPages.isSuccessSeeAddToCart();
     }
+
+    @Then("user should not be able to click minus at quantity one")
+    public void userCantClickMinusAtOne() {
+        // pastikan quantitynya 1 dulu
+
+        // Simpan hasil sesudahnya
+        int quantityText = middlemanCartPages.getProductCount(1);
+
+        // assert apakah quantityAfter sesuai dengan numberOfNewQuantity yang di inginkan
+        Assert.assertTrue(quantityText == 1);
+
+        // assert kalau buttonnya disabled di quantity satu
+        Assert.assertTrue(middlemanCartPages.checkIfUserCanClickMinusButton());
+
+    }
 }
 

@@ -87,4 +87,9 @@ public class MiddlemanCartPages extends BasePageObject {
         System.out.println("Text Quantity " +   textQuantity);
         return Integer.parseInt(textQuantity);
     }
+
+    public boolean checkIfUserCanClickMinusButton() {
+        WebElement minusButton = getDriver().findElement(elementBtnMinus);
+        return minusButton.isEnabled();
+    }
 }
