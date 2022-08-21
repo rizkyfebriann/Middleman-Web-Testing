@@ -123,4 +123,24 @@ public class BasePageObject {
         incorrectEmail.accept();
         wait(2000);
     }
+    public void alertSuccessAddProductAdmin() {
+        wait(2000);
+        Alert successAddProductAdmin = getDriver().switchTo().alert();
+        successAddProductAdmin.accept();
+    }
+    public void alertErrorInternalAddProductAdmin() {
+        wait(2000);
+        Alert errorInternalAddProductAdmin = getDriver().switchTo().alert();
+        errorInternalAddProductAdmin.accept();
+    }
+    public void alertErrorFailedGetFileProduct() {
+        wait(2000);
+        Alert errorFailedGetProductAdmin = getDriver().switchTo().alert();
+        errorFailedGetProductAdmin.accept();
+    }
+    public void alertWrongInputProductAdmin(){
+        wait(2000);
+        Alert errorWrongInputProductAdmin = getDriver().switchTo().alert();
+        errorWrongInputProductAdmin.accept();
+    }
 }
