@@ -1,7 +1,7 @@
 @Web
 Feature: Login
   Background: login user with registered valid email & valid password
-    Given user input email "ernatoko1@gmail.com" and password "erna123"
+    Given user input email "tokocobacoba22@gmail.com" and password "coba2123"
     And user click on login button
     And user see alert login success & click OK
     Then user success login
@@ -101,6 +101,21 @@ Feature: Login
     And user click edit button
     Then user stay in the pop up edit profile
 
+  @user
+  Scenario: Cancel delete user
+    When user open page my profile and click button delete
+    And user can see pop up verifikasi delete
+    And user choose button no
+    Then user should be redirect to page my profile
+
+#    Dijalankan Ganti Login
+  @user
+  Scenario: Delete user with already registed
+    When user open page my profile and click button delete
+    And user can see pop up verifikasi delete
+    And user choose button yes
+    And user see alert success delete data and klik ok
+    Then user can see redirect to login page
 
 
 
@@ -110,28 +125,3 @@ Feature: Login
 
 
 
-#  @user
-#  Scenario: Update user without properti name
-#    When user click button edit
-#    And user can see pop up edit profile
-#    And user input name " "
-#    And user input email "ernatoko1@gmail.com"
-#    And user input phone number "081234566661"
-#    And user input address "jalan cinta"
-#    And user click edit button
-#    Then user see required alert on username field
-##    Examples:
-##      |name    |email                |phone        |address     |
-##      |toko ernawt12|ernatoko1@gmail.com|081234566661|jalan cinta|
-#
-#
-#  @user
-#  Scenario: Update user without empty phone
-#    When user click button edit
-#    And user can see pop up edit profile
-#    And user input name "toko ernawt12"
-#    And user input email "ernatoko1@gmail.com"
-#    And user input phone number " "
-#    And user input address "jalan cinta"
-#    And user click edit button
-#    Then user see required alert on username field
