@@ -26,7 +26,7 @@ public class MiddlemanCartPages extends BasePageObject {
     By elementNumberTextItem = By.xpath("//*[@id=\"__next\"]/div/div[4]/div[1]/div/div[1]/p");
 
     // Ambil button minus berdasarkan textnya
-    By elementBtnMinus = By.xpath("//button[text()=\"-\"]");
+    By elementBtnMinus = By.xpath("//button[text()=\"-\"][1]");
 
     // ini buat product quantity yang button pertama, di XPath /.. artinya naek ke atas jadi dia
     // bakal ambil div nya

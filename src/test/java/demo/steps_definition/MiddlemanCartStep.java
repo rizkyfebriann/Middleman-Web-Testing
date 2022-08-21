@@ -116,6 +116,30 @@ public class MiddlemanCartStep extends BasePageObject {
         Assert.assertTrue(quantityAfter == quantityBefore - numberOfDecreasedQuantity);
     }
 
+    @And("user click button minus to decrease the product to {int}")
+    public void userClickButtonMinusUntilCertainNumber(int numberOfNewQuantity) {
+        // Simpan hasil nomor sebelumnya
+        int quantityBefore = middlemanCartPages.getProductCount(1);
+
+        // kurangi sampai dengan jumlah yang user inginkan di parameter numberOfNewQuantity
+        // jadi kalau numberOfNewQuantity=0, maka akan trus sampai 0 di kurangi
+
+        // hitung berapa kali loop untuk mencapai jumlah yang di inginkan
+        // contoh: kalau skrg quantitynya (di variable quantityBefore 3) dan kita ingin numberOfNewQuantity=0, maka
+        // kita harus click 3 kali supaya jadi nol
+       int jumlahLoop = quantityBefore - numberOfNewQuantity;
+
+       for(int i=0;i<jumlahLoop;i++) {
+           middlemanCartPages.minusProduct();
+       }
+
+        // Simpan hasil sesudahnya
+        int quantityAfter = middlemanCartPages.getProductCount(1);
+
+        // assert apakah quantityAfter sesuai dengan numberOfNewQuantity yang di inginkan
+        Assert.assertTrue(quantityAfter == numberOfNewQuantity);
+    }
+
 
     @And("user click button delete product")
     public void userClikButtonDeleteProduct() {
