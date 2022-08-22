@@ -185,4 +185,17 @@ public class BasePageObject {
         successOrder.accept();
         wait(2000);
     }
+    public void alertSuccessUpdateProductAdmin(){
+        wait(2000);
+        Alert successUpdateProductAdmin = getDriver().switchTo().alert();
+        successUpdateProductAdmin.accept();
+        wait(2000);
+    }
+    public void alertSuccessDeleteProductAdmin (){
+        wait(2000);
+        Alert successDeleteProductAdmin = getDriver().switchTo().alert();
+        successDeleteProductAdmin.accept();
+        wait(2000);
+    }
+
 }
