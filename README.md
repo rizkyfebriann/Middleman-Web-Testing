@@ -38,41 +38,41 @@ Middleman is a project for helping each store for buying some products for stock
 - Login Success (User / Admin)
 
   <img
-  src="gambar2"
+  src="https://github.com/rizkyfebriann/Testing-Web-Capstone/blob/main/image/Login%20Success.PNG"
   alt="Alt text"
-  title="Create New User"
+  title="Login Success"
   style="display: inline-block; margin: 0 auto; max-width: 150px">
   
 - Login Failed
 
   <img
-  src="gambar3"
+  src="https://github.com/rizkyfebriann/Testing-Web-Capstone/blob/main/image/Login%20Failed.PNG"
   alt="Alt text"
-  title="Login as Admin"
+  title="Login Failed"
   style="display: inline-block; margin: 0 auto; max-width: 150px">
   
 - Register Success
 
   <img
-  src="gambar4"
+  src="https://github.com/rizkyfebriann/Testing-Web-Capstone/blob/main/image/Register%20Success.PNG"
   alt="Alt text"
-  title="Login as User"
+  title="Register Success"
   style="display: inline-block; margin: 0 auto; max-width: 150px">
   
-- Edit Profil Success
+- Edit Profile Success
 
   <img
-  src="gambar4"
+  src="https://github.com/rizkyfebriann/Testing-Web-Capstone/blob/main/image/Edit%20Profil%20Success.PNG"
   alt="Alt text"
-  title="Login as User"
+  title="Edit Profile Success"
   style="display: inline-block; margin: 0 auto; max-width: 150px">
   
 - Add To Cart
 
   <img
-  src="gambar4"
+  src="https://github.com/rizkyfebriann/Testing-Web-Capstone/blob/main/image/Add%20To%20Cart.PNG"
   alt="Alt text"
-  title="Login as User"
+  title="Add To Cart"
   style="display: inline-block; margin: 0 auto; max-width: 150px">    
   
 
