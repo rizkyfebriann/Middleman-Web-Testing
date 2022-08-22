@@ -18,8 +18,18 @@ public class MiddlemanAdminPages extends BasePageObject {
     By elementLabelDashboard = By.xpath("//h1[contains(text(),'Dashboard')]");
     By elementModalBoxAddProduct = By.xpath("//body/div[@id='__next']/div[6]/div[1]");
     By elementButtonEditProduct = By.id("btn-edit-modal");
-    By elementUpdateProductImage = By.xpath("//body/div[@id='__next']/div[5]/div[8]/div[1]/section[1]/form[1]/input[1]");
-    By elemenUpdateProductName = By.xpath ("");
+    By elementUpdateProductImage = By.xpath("//body/div[@id='__next']/div[5]/div[2]/div[1]/section[1]/form[1]/input[1]");
+    By elementUpdateProductName = By.xpath ("//body/div[@id='__next']/div[5]/div[2]/div[1]/section[1]/form[1]/input[2]");
+    By elementUpdateProductUnit = By.xpath ("//body/div[@id='__next']/div[5]/div[2]/div[1]/section[1]/form[1]/input[3]");
+    By elementUpdateProductStock = By.xpath("//body/div[@id='__next']/div[5]/div[2]/div[1]/section[1]/form[1]/div[1]/input[1]");
+    By elementUpdateProductPrice = By.xpath("//body/div[@id='__next']/div[5]/div[2]/div[1]/section[1]/form[1]/div[1]/input[2]");
+    By elementButtonSuccessUpdate = By.xpath("//body/div[@id='__next']/div[5]/div[2]/div[1]/section[1]/form[1]/div[2]/button[1]");
+    By elementDeleteProduct = By.xpath("//body/div[@id='__next']/div[5]/div[1]/div[1]/div[2]/label[1]");
+    By elementButtonSuccessDelete = By.xpath("//button[@id='btn-delete']");
+    By elementButtonNoDelete = By.xpath("//body/div[@id='__next']/div[5]/div[2]/div[1]/section[1]/div[1]/button[2]");
+    By elementSearchProduct = By.xpath("//input[@id='input-search']");
+    By elementButtonSearch = By.xpath("//button[@id='btn-search']");
+    By elementResultNotFound = By.xpath("//body/div[@id='__next']/div[1]");
 
     public void clickButtonAddProduct() {
         clickOn(elementButtonAddProduct);
@@ -27,7 +37,7 @@ public class MiddlemanAdminPages extends BasePageObject {
     public void inputProductImage() {
         wait(2000);
         WebElement element= getDriver().switchTo().activeElement().findElement(elementinputProductImage);
-        element.sendKeys(IMAGE_FOLDER + "/ultramilk.jpeg");
+        element.sendKeys(IMAGE_FOLDER + "/indomie.jpeg");
     }
 
     public void inputProductName(String name){
@@ -83,13 +93,85 @@ public class MiddlemanAdminPages extends BasePageObject {
         clickOn(elementButtonEditProduct);
     }
     public void updateProductImage (){
+        wait(2000);
         WebElement element= getDriver().switchTo().activeElement().findElement(elementUpdateProductImage);
-        element.sendKeys(IMAGE_FOLDER + "/indomilk.jpeg");
+        element.sendKeys(IMAGE_FOLDER + "/update-indomilk.jpeg");
     }
     public void updateProductName (String name){
         wait(2000);
-        WebElement element= getDriver().switchTo().activeElement().findElement(elemenUpdateProductName);
-        element.sendKeys(name);
+        getDriver().findElement(elementUpdateProductName).clear();
+        typeOn(elementUpdateProductName, name);
+    }
+
+    public void updateProductUnit (String unit){
+        wait(2000);
+        getDriver().findElement(elementUpdateProductUnit).clear();
+        typeOn(elementUpdateProductUnit, unit);
+    }
+
+    public void updateProductStock (String stock){
+        wait(2000);
+        getDriver().findElement(elementUpdateProductStock).clear();
+        typeOn(elementUpdateProductStock, stock);
+    }
+    public void updateProductPrice (String price){
+        wait(2000);
+        getDriver().findElement(elementUpdateProductPrice).clear();
+        typeOn(elementUpdateProductPrice, price);
+    }
+    public void clickButtonUpdateProduct (){
+        clickOn(elementButtonSuccessUpdate);
+    }
+    public void alertSuccessfullyUpdate(){
+        wait (2000);
+        alertSuccessUpdateProductAdmin();
+    }
+   public boolean isSuccessfullyUpdateProductAdmin(){
+       wait(5000);
+       return isPresent(elementLabelDashboard);
+   }
+   public void clickButtonDeleteProduct(){
+        clickOn(elementDeleteProduct);
+   }
+   public void clickButtonSuccesDelete(){
+        clickOn(elementButtonSuccessDelete);
+   }
+   public void alertSuccessfullyDelete(){
+       wait (2000);
+       alertSuccessDeleteProductAdmin();
+   }
+   public boolean isSuccessfullyDeleteProductAdmin(){
+       wait(5000);
+       return isPresent(elementLabelDashboard);
+   }
+   public void clickButtonNoDelete(){
+        wait(2000);
+       clickOn(elementButtonNoDelete);
+   }
+   public boolean isCanBackToDashboard(){
+       wait(5000);
+       return isPresent(elementLabelDashboard);
+   }
+
+    public void inputKeyword (String keyword){
+        wait(2000);
+        getDriver().findElement(elementSearchProduct).clear();
+        typeOn(elementSearchProduct,keyword);
+    }
+
+    public void clickButtonSearch() {
+        wait(2000);
+        clickOn(elementButtonSearch);
+    }
+    public void inputInvalidKeyword(String keyword){
+        wait(2000);
+        getDriver().findElement(elementSearchProduct).clear();
+        typeOn(elementSearchProduct,keyword);
+    }
+
+    public boolean isCanSeeResultNotFound (){
+        wait(5000);
+        return isPresent(elementResultNotFound);
     }
 
 }

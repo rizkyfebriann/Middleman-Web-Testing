@@ -143,4 +143,14 @@ public class BasePageObject {
         Alert errorWrongInputProductAdmin = getDriver().switchTo().alert();
         errorWrongInputProductAdmin.accept();
     }
+    public void alertSuccessUpdateProductAdmin(){
+        wait(2000);
+        Alert successUpdateProductAdmin = getDriver().switchTo().alert();
+        successUpdateProductAdmin.accept();
+    }
+    public void alertSuccessDeleteProductAdmin (){
+        wait(2000);
+        Alert successDeleteProductAdmin = getDriver().switchTo().alert();
+        successDeleteProductAdmin.accept();
+    }
 }
