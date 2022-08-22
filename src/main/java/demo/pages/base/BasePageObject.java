@@ -79,7 +79,7 @@ public class BasePageObject {
     }
 
     public void alertSuccessRegister() {
-        wait(2000);
+        wait(3000);
         Alert successRegister = getDriver().switchTo().alert();
         successRegister.accept();
         wait(2000);

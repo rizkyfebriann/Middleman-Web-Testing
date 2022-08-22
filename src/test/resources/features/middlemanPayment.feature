@@ -41,8 +41,8 @@ Feature: Payment
     Then user go to my cart
     And user can see product added on cart
     And user click Next for create order and go to payment page
-    And user see payment page
+#    And user see payment page
 #    And user scroll for see more payment method
-    And user choose Shopeepay
+#    And user choose Shopeepay
 
 

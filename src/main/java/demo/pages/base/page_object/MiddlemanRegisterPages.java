@@ -74,7 +74,7 @@ public class MiddlemanRegisterPages extends BasePageObject {
     }
 
     public boolean isOnLoginPage() {
-        wait(2000);
+        wait(3000);
         return isPresent(elementLoginTitlePage);
     }
 
