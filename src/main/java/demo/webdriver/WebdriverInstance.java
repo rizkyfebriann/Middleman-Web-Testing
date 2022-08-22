@@ -13,13 +13,13 @@ public class WebdriverInstance {
     public static WebDriver webdriver;
 
     public static void initialize()  {
-        System.setProperty("webdriver.chrome.driver","chromedriver.exe");
+//        System.setProperty("webdriver.chrome.driver","chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito", "--start-maximized");
         options.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
         webdriver = new ChromeDriver(options);
         webdriver.manage().window().maximize();
-        webdriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        webdriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         webdriver.get("https://middleman-alta.vercel.app/auth/login");
         webdriver.manage().deleteAllCookies();
     }

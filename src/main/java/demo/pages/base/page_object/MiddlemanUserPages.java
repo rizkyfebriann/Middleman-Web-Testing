@@ -2,6 +2,7 @@ package demo.pages.base.page_object;
 
 import demo.pages.base.BasePageObject;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static demo.utils.Constants.timeout;
@@ -19,34 +20,37 @@ public class MiddlemanUserPages extends BasePageObject {
     By elementBtnEditProfile = By.id("open-modal");
     By elemenModalBoxEditProfile = By.xpath("(//div[@class='modal-box'])[3]");
     By elemenEditBtnProfile = By.xpath("//*[@id=\"btn-edit\"]");
-//    By elementMenuDropdown = By.className("mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52 font-Roboto font-medium");
-
-    public void inputNameShop(String name) {
-        getDriver().findElement(elementInputName).clear();
-        typeOn(elementInputName, name);
-    }
+    By elementBtnDeleteProfile = By.xpath("//label[contains(text(),'delete')]");
+    By elemenModalBoxDeleteProfile = By.xpath("//*[@id=\"__next\"]/div[4]/div");
+    By elementBtnYesDeleteProfile = By.id("btn-delete");
+    By elementLogoImageHalamanLogin = By.xpath("//*[@id=\"__next\"]/div/div/div[1]/div[1]/span/img");
+    By elementBtnNoDeleteProfile = By.xpath("//label[contains(text(),'No')]");
 
     public void inputNameClear(String name) {
         getDriver().findElement(elementInputName).clear();
         typeOn(elementInputName, name);
     }
 
-    public void inputEmailUser(String email) {
+    public void inputEmailClear(String email) {
         getDriver().findElement(elementInputEmail).clear();
         typeOn(elementInputEmail, email);
     }
 
-    public void inputEmailClear(String email) {
-        getDriver().findElement(elementInputEmail).clear();
-    }
-
-    public void inputPassword(String password) {
-        typeOn(elementInputPassword, password);
-    }
 
     public void inputPasswordClear(String password) {
         getDriver().findElement(elementInputPassword).clear();
     }
+
+    public void inputPhoneClear(String phone) {
+        getDriver().findElement(elementInputPhone).clear();
+        typeOn(elementInputPhone, phone);
+    }
+
+    public void inputAddressClear(String address) {
+        getDriver().findElement(elementInputAddress).clear();
+        typeOn(elementInputAddress, address);
+    }
+
     public void clickIconMyProfile() {
 //        waitUntil(ExpectedConditions.elementToBeClickable(elementBtnCircleMyProfile), timeout);
         clickOn(elementIconMyProfile);
@@ -62,6 +66,7 @@ public class MiddlemanUserPages extends BasePageObject {
         wait(5000);
         return isPresent(elementLabelDashboardMyProfile);
     }
+
     public void clickButtonEditMyProfile() {
         clickOn(elementBtnEditProfile);
     }
@@ -76,9 +81,37 @@ public class MiddlemanUserPages extends BasePageObject {
         alertSuccessEditProfile();
     }
 
+    public boolean isEditBoxPresent() {
+        return isPresentWithDelay(elemenModalBoxEditProfile, 2000);
+    }
+
     public boolean isStillOnPopUpEdit() {
         wait(2500);
         return isPresent(elemenModalBoxEditProfile);
+    }
+    public void clickButtonDeleteProfile() {
+//        waitUntil(ExpectedConditions.elementToBeClickable(elementBtnCircleMyProfile), timeout);
+        clickOn(elementBtnDeleteProfile);
+    }
+
+    public boolean alertModalBoxDeleteProfile() {
+        wait(2500);
+        return isPresent(elemenModalBoxDeleteProfile);
+    }
+    public void clickButtonYesDeleteProfile() {
+        clickOn(elementBtnYesDeleteProfile);
+    }
+    public boolean isRedirecToLoginPage() {
+        wait(1000);
+        return isPresent(elementLogoImageHalamanLogin);
+    }
+
+    public void clickBtnNoDeleteProfile() {
+       clickOn(elementBtnNoDeleteProfile);
+    }
+    public boolean  isSuccessBackToPageMyProfile() {
+        wait(2000);
+        return isPresent(elementLabelDashboardMyProfile);
     }
 
 }

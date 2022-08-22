@@ -32,7 +32,11 @@ public class BasePageObject {
     }
 
     public void clickOn(By element) {
-        waitUntil(ExpectedConditions.elementToBeClickable(element), timeout);
+        clickOn(element, timeout);
+    }
+
+    public void clickOn(By element, int expectedTimeout) {
+        waitUntil(ExpectedConditions.elementToBeClickable(element), expectedTimeout);
         getDriver().findElement(element).click();
     }
 
@@ -45,10 +49,15 @@ public class BasePageObject {
         return getDriver().findElement(element).isDisplayed();
     }
 
+    public boolean isPresentWithDelay(By element, int delay) {
+        wait(delay);
+        return isPresent(element);
+    }
+
     public void scrollDown() {
         wait(2000);
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
-        js.executeScript("window.scrollTo(0, 400)");
+        js.executeScript("window.scrollTo(0, 800)");
     }
 
     public void moveToTab(int index) {
@@ -104,24 +113,50 @@ public class BasePageObject {
     }
 
     public void alertSuccessEditProfile() {
-        wait(2000);
-        Alert successEditProfile = getDriver().switchTo().alert();
-        successEditProfile.accept();
-        wait(2000);
+        generalAlertAccept(2000);
     }
 
     public void alertNoSuccessEditProfile() {
-        wait(3000);
-        Alert noSuccessEditProfile = getDriver().switchTo().alert();
-        noSuccessEditProfile.accept();
-        wait(3000);
+        generalAlertAccept(3000);
     }
 
     public void alertEditEmailIncorrect() {
+        generalAlertAccept(2000);
+    }
+
+    public void alertEditFieldIsEmpty() {
+        generalAlertAccept(2000);
+    }
+
+    public void alertEditFieldEmptyEmail() {
+        generalAlertAccept(2000);
+    }
+
+    public void generalAlertAccept(int timeout) {
+        wait(timeout);
+        Alert alert = getDriver().switchTo().alert();
+        alert.accept();
+        wait(timeout);
+    }
+
+    public void generalAlertAccept2() {
         wait(2000);
-        Alert incorrectEmail = getDriver().switchTo().alert();
-        incorrectEmail.accept();
+        Alert alert = getDriver().switchTo().alert();
+        alert.accept();
         wait(2000);
+    }
+
+//    public void alertSuccessAddToCart() {
+//        wait(2000);
+//        Alert alert = getDriver().switchTo().alert();
+//        alert.getText();
+//        wait(2000);
+//    }
+
+    public void alertSuccessAddToCart() throws InterruptedException {
+        Thread.sleep(2000);
+        Alert successAddtoCart = getDriver().switchTo().alert();
+        successAddtoCart.accept();
     }
     public void alertSuccessAddProductAdmin() {
         wait(2000);
@@ -143,14 +178,24 @@ public class BasePageObject {
         Alert errorWrongInputProductAdmin = getDriver().switchTo().alert();
         errorWrongInputProductAdmin.accept();
     }
+
+    public void alertSuccessCreateOrder() {
+        wait(2000);
+        Alert successOrder = getDriver().switchTo().alert();
+        successOrder.accept();
+        wait(2000);
+    }
     public void alertSuccessUpdateProductAdmin(){
         wait(2000);
         Alert successUpdateProductAdmin = getDriver().switchTo().alert();
         successUpdateProductAdmin.accept();
+        wait(2000);
     }
     public void alertSuccessDeleteProductAdmin (){
         wait(2000);
         Alert successDeleteProductAdmin = getDriver().switchTo().alert();
         successDeleteProductAdmin.accept();
+        wait(2000);
     }
+
 }
