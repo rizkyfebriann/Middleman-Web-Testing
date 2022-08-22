@@ -86,4 +86,14 @@ public class MiddlemanUserProductsStep extends BasePageObject {
         middlemanUserProductsPages.isSuccessRedirectToMyProduct();
 
     }
+
+    @And("user click on button edit")
+    public void userClickOnButtonEdit() {
+        middlemanUserProductsPages.clickOnBtnEditProduct();
+    }
+
+    @Then("user success update product to my product page")
+    public void userSuccessUpdateProductToMyProductPage() {
+        middlemanUserProductsPages.isSuccessRedirectToMyProduct();
+    }
 }

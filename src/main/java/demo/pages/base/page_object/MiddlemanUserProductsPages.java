@@ -23,6 +23,9 @@ public class MiddlemanUserProductsPages extends BasePageObject {
     By elementBtnAdd = By.id("btn-add");
     By elementBtnCancel = By.id("btn-cancel");
     By elementLabelDashboard = By.xpath("//h1[contains(text(),'Dashboard')]");
+    By elementBtnEditProduct = By.id("btn-edit");
+
+    By elementBtnCancelProduct = By.id("btn-cancel");
 
 //    By elementinputProductImage = By.xpath("//body/div[@id='__next']/div[6]/div[1]/form[1]/input[1]");
 
@@ -83,5 +86,12 @@ public class MiddlemanUserProductsPages extends BasePageObject {
     public boolean isStillOnPopUpAddProduct() {
         wait(5000);
         return isPresent(elementModalBoxAddProduct);
+    }
+    public void clickOnBtnEditProduct() {
+          clickOn(elementBtnEditProduct);
+    }
+
+    public void clickOnBtnCancelProduct() {
+        clickOn(elementBtnCancelProduct);
     }
 }
