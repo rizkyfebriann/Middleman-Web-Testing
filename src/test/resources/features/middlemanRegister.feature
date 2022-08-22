@@ -34,8 +34,8 @@ Feature: Register
   Scenario: Register with name shop using 2 characters or more
     Given user open register page
     And user input name shop "Toko Rizky 3"
-    And user input email "testing01@mail.com"
-    And user input phone number "08973839404"
+    And user input email "testing12@mail.com"
+    And user input phone number "08973839567"
     And user input password "test1234"
     And user input address "Jalan Surabaya Blok T"
     Then user click sign up button

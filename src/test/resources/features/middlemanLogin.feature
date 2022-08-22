@@ -10,7 +10,7 @@ Feature: Login
 
   @loginadmin
   Scenario: login admin with registered valid email & valid password
-    Given user input email "adminqe@gomail.com" and password "qwe123"
+    Given user input email "adminqe@gmail.com" and password "qwe123"
     And user click on login button
     And user see alert login success & click OK
     Then user success login
