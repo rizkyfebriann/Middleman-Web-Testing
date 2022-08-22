@@ -38,84 +38,84 @@ Middleman is a project for helping each store for buying some products for stock
 - Login Success (User / Admin)
 
   <img
-  src="gambar2"
+  src="https://github.com/rizkyfebriann/Testing-Web-Capstone/blob/main/image/Login%20Success.PNG"
   alt="Alt text"
-  title="Create New User"
+  title="Login Success"
   style="display: inline-block; margin: 0 auto; max-width: 150px">
   
 - Login Failed
 
   <img
-  src="gambar3"
+  src="https://github.com/rizkyfebriann/Testing-Web-Capstone/blob/main/image/Login%20Failed.PNG"
   alt="Alt text"
-  title="Login as Admin"
+  title="Login Failed"
   style="display: inline-block; margin: 0 auto; max-width: 150px">
   
 - Register Success
 
   <img
-  src="gambar4"
+  src="https://github.com/rizkyfebriann/Testing-Web-Capstone/blob/main/image/Register%20Success.PNG"
   alt="Alt text"
-  title="Login as User"
+  title="Register Success"
   style="display: inline-block; margin: 0 auto; max-width: 150px">
   
-- Edit Profil Success
+- Edit Profile Success
 
   <img
-  src="gambar4"
+  src="https://github.com/rizkyfebriann/Testing-Web-Capstone/blob/main/image/Edit%20Profil%20Success.PNG"
   alt="Alt text"
-  title="Login as User"
+  title="Edit Profile Success"
   style="display: inline-block; margin: 0 auto; max-width: 150px">
   
-- Edit Profile Failed
+- Add To Cart
 
   <img
-  src="gambar4"
+  src="https://github.com/rizkyfebriann/Testing-Web-Capstone/blob/main/image/Add%20To%20Cart.PNG"
   alt="Alt text"
-  title="Login as User"
+  title="Add To Cart"
   style="display: inline-block; margin: 0 auto; max-width: 150px">    
   
 
 ## Web Automation Test Screenshot
 
-- Login
+- Login as Admin
 
   <img
-  src="gambar5"
+  src="https://github.com/rizkyfebriann/Testing-Web-Capstone/blob/main/image/automation%20web%20login%20admin.PNG"
   alt="Alt text"
-  title="Add New Payment"
+  title="Login Admin"
   style="display: inline-block; margin: 0 auto; max-width: 50px">
   
-- Register
+- Register for Store
 
   <img
-  src="gambar 6"
+  src="https://github.com/rizkyfebriann/Testing-Web-Capstone/blob/main/image/automation%20web%20register.PNG"
   alt="Alt text"
-  title="All Review"
+  title="Register for Store"
   style="display: inline-block; margin: 0 auto; max-width: 50px">  
   
 - Add Product To Cart
   
   <img
-  src="gambar 6"
+  src="https://github.com/rizkyfebriann/Testing-Web-Capstone/blob/main/image/add%20to%20cart%20automation%20web.PNG"
   alt="Alt text"
-  title="All Review"
+  title="Add Product To Cart"
   style="display: inline-block; margin: 0 auto; max-width: 50px"> 
   
 - Create Order
   
   <img
-  src="gambar 6"
+  src="https://github.com/rizkyfebriann/Testing-Web-Capstone/blob/main/image/automation%20web%20create%20order.PNG"
   alt="Alt text"
-  title="All Review"
+  title="Create Order"
   style="display: inline-block; margin: 0 auto; max-width: 50px">   
   
 - Payment Transaction
   
   <img
-  src="gambar 6"
+  src="https://github.com/rizkyfebriann/Testing-Web-Capstone/blob/main/image/automation%20payment%20order.PNG"
   alt="Alt text"
-  title="All Review"
+  title="Payment Transaction"
   style="display: inline-block; margin: 0 auto; max-width: 50px">   
   
   

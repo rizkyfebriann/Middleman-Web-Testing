@@ -35,4 +35,14 @@ Feature: Payment
     And user click Bayar button
     And user can see payment transaction is success
 
+  Scenario: Payment order with Shopeepay
+    When user scroll down little bit on dashboard page
+    And click button add product on Super Bubur
+    Then user go to my cart
+    And user can see product added on cart
+    And user click Next for create order and go to payment page
+#    And user see payment page
+#    And user scroll for see more payment method
+#    And user choose Shopeepay
+
 
