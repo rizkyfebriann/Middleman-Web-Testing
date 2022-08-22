@@ -67,7 +67,7 @@ Middleman is a project for helping each store for buying some products for stock
   title="Login as User"
   style="display: inline-block; margin: 0 auto; max-width: 150px">
   
-- Edit Profile Failed
+- Add To Cart
 
   <img
   src="gambar4"
