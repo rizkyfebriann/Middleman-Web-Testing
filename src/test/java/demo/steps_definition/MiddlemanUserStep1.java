@@ -13,7 +13,6 @@ import org.openqa.selenium.WebElement;
 
 public class MiddlemanUserStep1 {
     MiddlemanRegisterPages middlemanRegisterPages = new MiddlemanRegisterPages();
-    MiddlemanLoginPages middlemanLoginPages = new MiddlemanLoginPages();
     MiddlemanUserPages middlemanUserPages = new MiddlemanUserPages();
 
     @Given("user click button profile")

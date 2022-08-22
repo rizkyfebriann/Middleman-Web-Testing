@@ -3,11 +3,16 @@ package demo.pages.base.page_object;
 import demo.pages.base.BasePageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import static demo.utils.Constants.timeout;
 
 public class MiddlemanUserProductsPages extends BasePageObject {
     public static final String DIR = System.getProperty("user.dir");
     public static String IMAGE_FOLDER = DIR + "/src/test/resources/image";
 
+    By elementMenuMyProduct = By.xpath("//a[text()='My Product'][1] ");
+    By elementHeaderPageMyProduct = By.xpath("//h1[contains(text(),'My Product')]");
     By elementButtonAddProduct = By.id("btn-add");
     By elementModalBoxAddProduct = By.xpath("//*[@id=\"__next\"]/div[5]/div");
     By elementInputProductImage = By.id("input-image");
@@ -27,13 +32,24 @@ public class MiddlemanUserProductsPages extends BasePageObject {
 //    By elementinputDataPrice = By.xpath("//body/div[@id='__next']/div[6]/div[1]/form[1]/div[1]/input[2]");
 //    By elementButtonSuccessAdd = By.xpath("//body/div[@id='__next']/div[6]/div[1]/form[1]/div[2]/button[1]");
 //
+
+    public void clickMenuMyProduct() throws InterruptedException {
+        waitUntil(ExpectedConditions.elementToBeClickable(elementMenuMyProduct), timeout);
+        clickOn(elementMenuMyProduct);
+    }
+    public boolean isSuccessRedirectToMyProduct() {
+        wait(2000);
+        return isPresent(elementHeaderPageMyProduct);
+    }
+
     public void clickButtonAddProduct() {
         clickOn(elementButtonAddProduct);
     }
-    public void inputProductImage() {
+    public void inputProductImage(String image) {
         wait(2000);
         WebElement element= getDriver().switchTo().activeElement().findElement(elementInputProductImage);
         element.sendKeys(IMAGE_FOLDER + "/beras_pulen.jpeg");
+//        typeOn(elementInputProductImage, image);
     }
 
     public void inputProductName(String name){
@@ -61,6 +77,11 @@ public class MiddlemanUserProductsPages extends BasePageObject {
     }
     public boolean isSuccessfullyAddProduct() {
         wait(5000);
-        return isPresent(elementLabelDashboard);
+        return isPresent(elementHeaderPageMyProduct);
+    }
+
+    public boolean isStillOnPopUpAddProduct() {
+        wait(5000);
+        return isPresent(elementModalBoxAddProduct);
     }
 }
