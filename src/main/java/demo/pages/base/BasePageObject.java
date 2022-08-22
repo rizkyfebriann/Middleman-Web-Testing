@@ -60,6 +60,12 @@ public class BasePageObject {
         js.executeScript("window.scrollTo(0, 800)");
     }
 
+    public void InnerScrollDown (){
+        wait(2000);
+        JavascriptExecutor jse = (JavascriptExecutor) getDriver();
+        jse.executeScript("scroll(0, 250)"); //y value '250' can be altered
+    }
+
     public void moveToTab(int index) {
         ArrayList<String> tabs = new ArrayList(getDriver().getWindowHandles());
         getDriver().switchTo().window(tabs.get(index));

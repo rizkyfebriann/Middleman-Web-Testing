@@ -104,4 +104,14 @@ public class MiddlemanPaymentStep extends BasePageObject {
     public void userCanSeeTransactionsOnHistoryOrderPage() {
         middlemanPaymentpages.isSuccessfullyOnHistoryOrderPage();
     }
+
+    @And("user scroll for see more payment method")
+    public void userScrollForSeeMorePaymentMethod() {
+        middlemanPaymentpages.innerScrollDownLittleBit();
+    }
+
+    @And("user choose Shopeepay")
+    public void userChooseShopeepay() {
+        middlemanPaymentpages.clickShopeePay();
+    }
 }

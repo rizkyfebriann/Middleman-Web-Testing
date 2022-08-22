@@ -2,6 +2,7 @@ package demo.pages.base.page_object;
 
 import demo.pages.base.BasePageObject;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 
 public class MiddlemanPaymentPages extends BasePageObject {
 
@@ -32,10 +33,28 @@ public class MiddlemanPaymentPages extends BasePageObject {
 
     By elementPaymentSuccessStatus = By.xpath("//div[contains(text(),'Transaksi Sukses')]");
 
+    By elementShopeePay = By.xpath("//*[@class=\"list\"][12]");
 
+    By elementDivScrollTo = By.xpath("//*[@id=\"application\"]/div");
 
     public void scrollDownLittleBit() {
         scrollDown();
+    }
+
+    public void innerScrollDownLittleBit() {
+//        JavascriptExecutor jse = (JavascriptExecutor) getDriver();
+//        jse.executeScript("arguments[0].scrollIntoView(true)", elementShopeePay);
+//        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+//        js.executeScript("javascript:window.scrollBy(0,350)");
+        ((JavascriptExecutor) getDriver()).executeScript(
+                "arguments[0].scrollTop=arguments[1].offsetTop",
+                elementDivScrollTo,
+                elementShopeePay);
+    }
+
+    public void clickShopeePay() {
+        clickOn(elementShopeePay);
+        wait(3000);
     }
 
     public void clickAddSuperBubur() {
@@ -60,7 +79,7 @@ public class MiddlemanPaymentPages extends BasePageObject {
     }
 
     public boolean isSuccessfullyOnPaymentPage() {
-        wait(3000);
+        wait(5000);
         return isPresent(elementAlreadyOnPaymentPage);
     }
 
