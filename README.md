@@ -35,7 +35,7 @@ Middleman is a project for helping each store for buying some products for stock
 
 ## Web Manual Test Screenshot
 
-- Create New User
+- Login Success (User / Admin)
 
   <img
   src="gambar2"
@@ -43,7 +43,7 @@ Middleman is a project for helping each store for buying some products for stock
   title="Create New User"
   style="display: inline-block; margin: 0 auto; max-width: 150px">
   
-- Login as Admin
+- Login Failed
 
   <img
   src="gambar3"
@@ -51,7 +51,7 @@ Middleman is a project for helping each store for buying some products for stock
   title="Login as Admin"
   style="display: inline-block; margin: 0 auto; max-width: 150px">
   
-- Login as User
+- Register Success
 
   <img
   src="gambar4"
@@ -59,24 +59,64 @@ Middleman is a project for helping each store for buying some products for stock
   title="Login as User"
   style="display: inline-block; margin: 0 auto; max-width: 150px">
   
+- Edit Profil Success
+
+  <img
+  src="gambar4"
+  alt="Alt text"
+  title="Login as User"
+  style="display: inline-block; margin: 0 auto; max-width: 150px">
   
+- Edit Profile Failed
+
+  <img
+  src="gambar4"
+  alt="Alt text"
+  title="Login as User"
+  style="display: inline-block; margin: 0 auto; max-width: 150px">    
   
 
 ## Web Automation Test Screenshot
 
-- Add New Payment
-<img
+- Login
+
+  <img
   src="gambar5"
   alt="Alt text"
   title="Add New Payment"
   style="display: inline-block; margin: 0 auto; max-width: 50px">
   
-- All Review
-<img
+- Register
+
+  <img
   src="gambar 6"
   alt="Alt text"
   title="All Review"
   style="display: inline-block; margin: 0 auto; max-width: 50px">  
+  
+- Add Product To Cart
+  
+  <img
+  src="gambar 6"
+  alt="Alt text"
+  title="All Review"
+  style="display: inline-block; margin: 0 auto; max-width: 50px"> 
+  
+- Create Order
+  
+  <img
+  src="gambar 6"
+  alt="Alt text"
+  title="All Review"
+  style="display: inline-block; margin: 0 auto; max-width: 50px">   
+  
+- Payment Transaction
+  
+  <img
+  src="gambar 6"
+  alt="Alt text"
+  title="All Review"
+  style="display: inline-block; margin: 0 auto; max-width: 50px">   
   
   
 
