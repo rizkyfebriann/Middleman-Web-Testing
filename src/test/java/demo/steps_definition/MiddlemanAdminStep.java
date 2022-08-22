@@ -27,7 +27,7 @@ public class MiddlemanAdminStep {
 
     @And("user input data product name {string}")
     public void userInputDataProductName(String name) {
-        middlemanAdminPages.inputProductName(name+System.currentTimeMillis());
+        middlemanAdminPages.inputProductName(name);
     }
 
     @And("user input data unit {string}")
@@ -209,5 +209,15 @@ public class MiddlemanAdminStep {
             Assert.assertTrue(middlemanAdminPages.isCanSeeResultNotFound());
         } catch (NoSuchElementException ignored) {
         }
+    }
+
+    @Then("user see required alert on image product field {string}")
+    public void userSeeRequiredAlertOnImageProductField(String arg0) {
+        middlemanAdminPages.isStillOnAddProduct();
+    }
+
+    @And("user see required alert on product name field {string}")
+    public void userSeeRequiredAlertOnProductNameField(String arg0) {
+        middlemanAdminPages.isStillOnAddProduct();
     }
 }

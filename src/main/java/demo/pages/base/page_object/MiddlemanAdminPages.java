@@ -9,24 +9,24 @@ public class MiddlemanAdminPages extends BasePageObject {
     public static String IMAGE_FOLDER = DIR + "/src/test/resources/image";
 
     By elementButtonAddProduct = By.id("btn-add");
-    By elementinputProductImage = By.xpath("//body/div[@id='__next']/div[6]/div[1]/form[1]/input[1]");
-    By elementinputProductName = By.xpath ("//body/div[@id='__next']/div[6]/div[1]/form[1]/input[2]");
-    By elementinputDataUnit = By.xpath("//body/div[@id='__next']/div[6]/div[1]/form[1]/input[3]");
-    By elementinputDataStock = By.xpath("//body/div[@id='__next']/div[6]/div[1]/form[1]/div[1]/input[1]");
-    By elementinputDataPrice = By.xpath("//body/div[@id='__next']/div[6]/div[1]/form[1]/div[1]/input[2]");
-    By elementButtonSuccessAdd = By.xpath("//body/div[@id='__next']/div[6]/div[1]/form[1]/div[2]/button[1]");
+    By elementinputProductImage = By.xpath("//body/div[@id='__next']/div[5]/div[1]/form[1]/input[1]");
+    By elementinputProductName = By.xpath ("//body/div[@id='__next']/div[5]/div[1]/form[1]/input[2]");
+    By elementinputDataUnit = By.xpath("//body/div[@id='__next']/div[5]/div[1]/form[1]/input[3]");
+    By elementinputDataStock = By.xpath("//body/div[@id='__next']/div[5]/div[1]/form[1]/div[1]/input[1]");
+    By elementinputDataPrice = By.xpath("//body/div[@id='__next']/div[5]/div[1]/form[1]/div[1]/input[2]");
+    By elementButtonSuccessAdd = By.xpath("//body/div[@id='__next']/div[5]/div[1]/form[1]/div[2]/button[1]");
     By elementLabelDashboard = By.xpath("//h1[contains(text(),'Dashboard')]");
-    By elementModalBoxAddProduct = By.xpath("//body/div[@id='__next']/div[6]/div[1]");
+    By elementModalBoxAddProduct = By.xpath("//body/div[@id='__next']/div[5]/div[1]");
     By elementButtonEditProduct = By.id("btn-edit-modal");
-    By elementUpdateProductImage = By.xpath("//body/div[@id='__next']/div[5]/div[2]/div[1]/section[1]/form[1]/input[1]");
-    By elementUpdateProductName = By.xpath ("//body/div[@id='__next']/div[5]/div[2]/div[1]/section[1]/form[1]/input[2]");
-    By elementUpdateProductUnit = By.xpath ("//body/div[@id='__next']/div[5]/div[2]/div[1]/section[1]/form[1]/input[3]");
-    By elementUpdateProductStock = By.xpath("//body/div[@id='__next']/div[5]/div[2]/div[1]/section[1]/form[1]/div[1]/input[1]");
-    By elementUpdateProductPrice = By.xpath("//body/div[@id='__next']/div[5]/div[2]/div[1]/section[1]/form[1]/div[1]/input[2]");
-    By elementButtonSuccessUpdate = By.xpath("//body/div[@id='__next']/div[5]/div[2]/div[1]/section[1]/form[1]/div[2]/button[1]");
-    By elementDeleteProduct = By.xpath("//body/div[@id='__next']/div[5]/div[1]/div[1]/div[2]/label[1]");
-    By elementButtonSuccessDelete = By.xpath("//button[@id='btn-delete']");
-    By elementButtonNoDelete = By.xpath("//body/div[@id='__next']/div[5]/div[2]/div[1]/section[1]/div[1]/button[2]");
+    By elementUpdateProductImage = By.xpath("//body/div[@id='__next']/div[4]/div[2]/div[1]/section[1]/form[1]/input[1]");
+    By elementUpdateProductName = By.xpath ("//body/div[@id='__next']/div[4]/div[2]/div[1]/section[1]/form[1]/input[2]");
+    By elementUpdateProductUnit = By.xpath ("//body/div[@id='__next']/div[4]/div[2]/div[1]/section[1]/form[1]/input[3]");
+    By elementUpdateProductStock = By.xpath("//body/div[@id='__next']/div[4]/div[2]/div[1]/section[1]/form[1]/div[1]/input[1]");
+    By elementUpdateProductPrice = By.xpath("//body/div[@id='__next']/div[4]/div[2]/div[1]/section[1]/form[1]/div[1]/input[2]");
+    By elementButtonSuccessUpdate = By.xpath("//body/div[@id='__next']/div[4]/div[2]/div[1]/section[1]/form[1]/div[2]/button[1]");
+    By elementDeleteProduct = By.id("btn-delete-modal");
+    By elementButtonSuccessDelete = By.id("//button[@id='btn-delete']");
+    By elementButtonNoDelete = By.xpath("//body/div[@id='__next']/div[4]/div[2]/div[1]/section[1]/div[1]/button[2]");
     By elementSearchProduct = By.xpath("//input[@id='input-search']");
     By elementButtonSearch = By.xpath("//button[@id='btn-search']");
     By elementResultNotFound = By.xpath("//body/div[@id='__next']/div[1]");
@@ -37,7 +37,7 @@ public class MiddlemanAdminPages extends BasePageObject {
     public void inputProductImage() {
         wait(2000);
         WebElement element= getDriver().switchTo().activeElement().findElement(elementinputProductImage);
-        element.sendKeys(IMAGE_FOLDER + "/indomie.jpeg");
+        element.sendKeys(IMAGE_FOLDER + "/shampoo-lifebuoy.jpeg");
     }
 
     public void inputProductName(String name){
@@ -64,25 +64,28 @@ public class MiddlemanAdminPages extends BasePageObject {
     }
     public void clickButtonSuccessAdd() {
         clickOn(elementButtonSuccessAdd);
+        wait(2000);
     }
 
     public void alertSuccessfullyAdd() {
+        wait(2000);
         alertSuccessAddProductAdmin();
 
     }
     public boolean isSuccessfullyAddProductAdmin() {
-        wait(5000);
+        wait(2000);
         return isPresent(elementLabelDashboard);
     }
 
     public boolean isStillOnAddProduct() {
-        wait(5000);
+        wait(2000);
         return isPresent(elementModalBoxAddProduct);
     }
     public void alertInternalErrorAdd(){
         alertErrorInternalAddProductAdmin();
     }
     public void alertFailedGetFile(){
+        wait(2000);
         alertErrorFailedGetFileProduct();
     }
     public void alertWrongInput(){
@@ -95,7 +98,7 @@ public class MiddlemanAdminPages extends BasePageObject {
     public void updateProductImage (){
         wait(2000);
         WebElement element= getDriver().switchTo().activeElement().findElement(elementUpdateProductImage);
-        element.sendKeys(IMAGE_FOLDER + "/update-indomilk.jpeg");
+        element.sendKeys(IMAGE_FOLDER + "/shampoo-lifebuoy-hijau.jpeg");
     }
     public void updateProductName (String name){
         wait(2000);
@@ -127,7 +130,7 @@ public class MiddlemanAdminPages extends BasePageObject {
         alertSuccessUpdateProductAdmin();
     }
    public boolean isSuccessfullyUpdateProductAdmin(){
-       wait(5000);
+       wait(2000);
        return isPresent(elementLabelDashboard);
    }
    public void clickButtonDeleteProduct(){
@@ -141,7 +144,7 @@ public class MiddlemanAdminPages extends BasePageObject {
        alertSuccessDeleteProductAdmin();
    }
    public boolean isSuccessfullyDeleteProductAdmin(){
-       wait(5000);
+       wait(2000);
        return isPresent(elementLabelDashboard);
    }
    public void clickButtonNoDelete(){
@@ -149,7 +152,7 @@ public class MiddlemanAdminPages extends BasePageObject {
        clickOn(elementButtonNoDelete);
    }
    public boolean isCanBackToDashboard(){
-       wait(5000);
+       wait(2000);
        return isPresent(elementLabelDashboard);
    }
 
@@ -170,7 +173,7 @@ public class MiddlemanAdminPages extends BasePageObject {
     }
 
     public boolean isCanSeeResultNotFound (){
-        wait(5000);
+        wait(2000);
         return isPresent(elementResultNotFound);
     }
 
