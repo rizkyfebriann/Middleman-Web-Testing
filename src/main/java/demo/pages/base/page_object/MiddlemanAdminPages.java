@@ -25,7 +25,7 @@ public class MiddlemanAdminPages extends BasePageObject {
     By elementUpdateProductPrice = By.xpath("//body/div[@id='__next']/div[4]/div[2]/div[1]/section[1]/form[1]/div[1]/input[2]");
     By elementButtonSuccessUpdate = By.xpath("//body/div[@id='__next']/div[4]/div[2]/div[1]/section[1]/form[1]/div[2]/button[1]");
     By elementDeleteProduct = By.id("btn-delete-modal");
-    By elementButtonSuccessDelete = By.id("//button[@id='btn-delete']");
+    By elementButtonSuccessDelete = By.xpath("//button[@id='btn-delete']");
     By elementButtonNoDelete = By.xpath("//body/div[@id='__next']/div[4]/div[2]/div[1]/section[1]/div[1]/button[2]");
     By elementSearchProduct = By.xpath("//input[@id='input-search']");
     By elementButtonSearch = By.xpath("//button[@id='btn-search']");
@@ -37,7 +37,7 @@ public class MiddlemanAdminPages extends BasePageObject {
     public void inputProductImage() {
         wait(2000);
         WebElement element= getDriver().switchTo().activeElement().findElement(elementinputProductImage);
-        element.sendKeys(IMAGE_FOLDER + "/shampoo-lifebuoy.jpeg");
+        element.sendKeys(IMAGE_FOLDER + "/minyak-bimoli.jpeg");
     }
 
     public void inputProductName(String name){
@@ -98,7 +98,7 @@ public class MiddlemanAdminPages extends BasePageObject {
     public void updateProductImage (){
         wait(2000);
         WebElement element= getDriver().switchTo().activeElement().findElement(elementUpdateProductImage);
-        element.sendKeys(IMAGE_FOLDER + "/shampoo-lifebuoy-hijau.jpeg");
+        element.sendKeys(IMAGE_FOLDER + "/minyak-fortune.jpeg");
     }
     public void updateProductName (String name){
         wait(2000);

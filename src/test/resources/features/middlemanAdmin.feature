@@ -195,12 +195,12 @@ Feature: admins
     And user click "No" on button delete product
     Then user can back to dashboard
 
-#  @DeleteProductAdmin @Positive
-#  Scenario: Delete success product admin
-#    Given user click button delete
-#    And user click "Yes" on button delete
-#    And user see alert success delete product & click OK
-#    Then user can see success delete product to dashboard
+  @DeleteProductAdmin @Positive
+  Scenario: Delete success product admin
+    Given user click button delete
+    And user click "Yes" on button delete
+    And user see alert success delete product & click OK
+    Then user can see success delete product to dashboard
 
   @SearchProductAdmin @Positive
   Scenario: Search product admin with full valid keyword from product name
