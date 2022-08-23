@@ -45,6 +45,11 @@ public class BasePageObject {
         getDriver().findElement(element).sendKeys(text);
     }
 
+    public void clearInput(By element) {
+        waitUntil(ExpectedConditions.visibilityOfElementLocated(element), timeout);
+        getDriver().findElement(element).clear();
+    }
+
     public boolean isPresent(By element) {
         return getDriver().findElement(element).isDisplayed();
     }
