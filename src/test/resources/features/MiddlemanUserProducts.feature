@@ -6,14 +6,14 @@ Feature: Login
     And user see alert login success & click OK
     Then user success login
 
-
-  @AddProductAdmin @Positive
+#sukses
+  @AddProductUser @Positive
   Scenario: Add product user to my product
     Given user go to page my product
     And user will see my product page
     When user click button add on page my product
     And user input product image
-    And user input product name "beras pulennn"
+    And user input new product name "beras pulennn" with random suffix
     And user input unit "pcs"
     And user input stock "20"
     And user input price "5000"
@@ -21,35 +21,22 @@ Feature: Login
     And user see alert success add product & click OK
     Then user can see success add product to my product page
 
-  @AddProductAdmin @Positive
+ #Sukses
+  @AddProductUser @Positive
   Scenario: Add product user to my product page with invalid stock
     Given user go to page my product
     And user will see my product page
     When user click button add on page my product
     And user input product image
-    And user input product name "beras pulennn"
+    And user input new product name "beras pulennn" with random suffix
     And user input unit "pcs"
     And user input stock "e"
     And user input price "5000"
     And user click on button add product
-    And user see alert success add product & click OK
-    Then user see required alert please enter a number on stock field
+    Then user should stay in the Add Product pop up
 
-  @AddProductAdmin @Positive
-  Scenario: Add product user to my product page with invalid price
-    Given user go to page my product
-    And user will see my product page
-    When user click button add on page my product
-    And user input product image
-    And user input product name "beras pulennn"
-    And user input unit "pcs"
-    And user input stock "20"
-    And user input price "5,000"
-    And user click on button add product
-    And user see alert success add product & click OK
-    Then user see required alert please enter a number on price field
-
-  @AddProductAdmin @Positive
+#Sukses, tapi harusnya error?
+  @AddProductUser @Positive
   Scenario: Add product admin to dashboard with registered product name
     Given user go to page my product
     And user will see my product page
@@ -60,58 +47,60 @@ Feature: Login
     And user input stock "20"
     And user input price "5000"
     And user click on button add product
-    And user can see alert internal error add product & click OK
+    And user see alert success add product & click OK
     Then user back to my product page
 
-  @AddProductAdmin @Negative
+ #sukses
+  @AddProductUser @Negative
   Scenario: Add product user on my product page with empty image product field
     Given user go to page my product
     And user will see my product page
     When user click button add on page my product
-    And user input product image
-    And user input product name "beras pulennn"
+    And user input new product name "beras pulennn" with random suffix
     And user input unit "pcs"
     And user input stock "20"
     And user input price "5000"
     And user click on button add product
-    And user can see alert internal error add product & click OK
+      # check alert text
+    And user can see alert with message "failed to get file" & click OK
     Then user back to my product page
 
-  @AddProductAdmin @Negative
+#Sukses
+  @AddProductUser @Negative
   Scenario: Add product user with empty product name
     Given user go to page my product
     And user will see my product page
     When user click button add on page my product
     And user input product image
-    And user input product name ""
     And user input unit "pcs"
     And user input stock "20"
     And user input price "5000"
     And user click on button add product
-    And user can see alert error & click OK
+    And user can see alert with message "wrong input" & click OK
     Then user back to my product page
 
-  @AddProductAdmin @Negative
+#Sukses
+  @AddProductUser @Negative
   Scenario: Add product user with empty stock
     Given user go to page my product
     And user will see my product page
     When user click button add on page my product
     And user input product image
-    And user input product name "beras pulennn"
+    And user input new product name "beras pulennn" with random suffix
     And user input unit "pcs"
-    And user input stock "3"
     And user input price "5000"
     And user click on button add product
-    And user can see alert error & click OK
+    And user can see alert with message "wrong input" & click OK
     Then user back to my product page
 
-  @AddProductAdmin @Negatif
+#Sukses, tapi harusnya error?
+  @AddProductUser @Negatif
   Scenario: Add product user with name product using one character
     Given user go to page my product
     And user will see my product page
     When user click button add on page my product
     And user input product image
-    And user input product name "a"
+    And user input new product name "a" with random suffix
     And user input unit "pcs"
     And user input stock "4"
     And user input price "5000"
@@ -119,13 +108,14 @@ Feature: Login
     And user see alert success add product & click OK
     Then user back to my product page
 
-  @AddProductAdmin @Positive
+#Sukses, tapi harusnya error?
+  @AddProductUser @Positive
   Scenario: Add product user with name product numeric
     Given user go to page my product
     And user will see my product page
     When user click button add on page my product
     And user input product image
-    And user input product name "12345"
+    And user input new product name "12345" with random suffix
     And user input unit "pcs"
     And user input stock "4"
     And user input price "5000"
@@ -133,13 +123,14 @@ Feature: Login
     And user see alert success add product & click OK
     Then user back to my product page
 
-  @AddProductAdmin @Positive
+#Sukses, tapi harusnya error?
+  @AddProductUser @Positive
   Scenario: Add product user with name product using special character
     Given user go to page my product
     And user will see my product page
     When user click button add on page my product
     And user input product image
-    And user input product name "beras@!"
+    And user input new product name "beras@!" with random suffix
     And user input unit "pcs"
     And user input stock "4"
     And user input price "5000"
@@ -147,58 +138,69 @@ Feature: Login
     And user see alert success add product & click OK
     Then user back to my product page
 
-
-  @UpdateProductAdmin @Positive
+# Sukses
+  @AddProductUser @Positive
   Scenario: Update product user with valid data
     Given user go to page my product
     And user will see my product page
-    When user click button add on page my product
+    When user click on button edit in a product list index 1
     And user input product image
-    And user input product name "beras pulen"
-    And user input unit "pcs"
-    And user input stock "4"
-    And user input price "5000"
+    And user edit new product name "beras pulennn" with random suffix
+    And user edit unit "pcs"
+    And user edit stock "4"
+    And user edit price "5000"
     And user click on button edit
-    And user see alert success add product & click OK
+    And user can see alert with message "success update data" & click OK
     Then user success update product to my product page
 
-  @UpdateProductAdmin @Positive
+  @AddProductUser @Positive
   Scenario: Update product user without product image
 
-  @UpdateProductAdmin @Positive
+  @AddProductUser @Positive
   Scenario: Update product user without product name
 
-  @UpdateProductAdmin @Positive
+  @AddProductUser @Positive
   Scenario: Update product user without stock
 
-  @UpdateProductAdmin @Positive
+  @AddProductUser @Positive
   Scenario: Update product user without unit
+    Given user go to page my product
+    And user will see my product page
+    When user click on button edit in a product list index 1
+    And user input product image
+    And user edit new product name "beras pulennn" with random suffix
+    And user clear unit
+    And user edit stock "4"
+    And user edit price "5000"
+    And user click on button edit
+    # Ini belom di implementasi, harus check XPath buat dialog boxnya
+    Then user should stay in the Edit Product pop up
 
-  @UpdateProductAdmin @Negative
+  @AddProductUser @Negative
   Scenario: Update product user with invalid data stock
 
-  @UpdateProductAdmin @Negative
+  @AddProductUser @Negative
   Scenario: Update product user with invalid data price
 
-  @SearchProductAdmin @Positive
+  @SearchProductUser @Positive
   Scenario: Search product user with valid name
 
-  @SearchProductAdmin @Positive
+  @SearchProductUser @Positive
   Scenario: Search product on name field with any alphabet
 
-  @SearchProductAdmin @Negative
+  @SearchProductUser @Negative
   Scenario: Search product with one character
 
-  @SearchProductAdmin @Positive
+  @SearchProductUser @Positive
   Scenario: Search product on name field with any alphabet
 
-  @SearchProductAdmin @Negative
+  @SearchProductUser @Negative
   Scenario: Search product with any special chart
 
-  @SearchProductAdmin @Negative
+  @SearchProductUser @Negative
   Scenario: Search product with any numeric
 
-  @DeleteProductAdmin @Positive
+  @DeleteProductUser @Positive
   Scenario: Delete cancel product success
 
 

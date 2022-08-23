@@ -15,8 +15,12 @@ public class MiddlemanUserProductsStep extends BasePageObject {
 //    MiddlemanAdminPages middlemanAdminPages = new MiddlemanAdminPages();
     MiddlemanUserProductsPages middlemanUserProductsPages = new MiddlemanUserProductsPages();
 
+//    @Given("user go to page my product")
+//    public void userGoToPageMyProduct() throws InterruptedException {
+//        middlemanUserProductsPages.clickMenuMyProduct();
+//    }
     @Given("user go to page my product")
-    public void userGoToPageMyProduct() throws InterruptedException {
+    public void userGoToPageMyProduct(){
         middlemanUserProductsPages.clickMenuMyProduct();
     }
 
@@ -29,20 +33,28 @@ public class MiddlemanUserProductsStep extends BasePageObject {
         middlemanUserProductsPages.clickButtonAddProduct();
     }
     @And("user input product image")
-    public void userInputProductImage(String image) {
-        middlemanUserProductsPages.inputProductImage(image);
+    public void userInputProductImage() {
+        middlemanUserProductsPages.inputProductImage();
     }
-    @And("user input product name {string}")
-    public void userInputProductName(String name) {
+    @And("user input new product name {string} with random suffix")
+    public void userInputProductNameWithRandomSuffix(String name) {
         middlemanUserProductsPages.inputProductName(name+System.currentTimeMillis());
     }
+
+
+    @And("user input product name {string}")
+    public void userInputProductName(String name) {
+        middlemanUserProductsPages.inputProductName(name);
+    }
+
+
     @And("user input unit {string}")
     public void userInputUnit(String unit) {
         middlemanUserProductsPages.inputProductUnit(unit);
     }
     @And("user input stock {string}")
     public void userInputStock(String stock) {
-        middlemanUserProductsPages.inputinputProductStock(stock);
+        middlemanUserProductsPages.inputProductStock(stock);
     }
     @And("user input price {string}")
     public void userInputPrice(String price) {
@@ -52,10 +64,7 @@ public class MiddlemanUserProductsStep extends BasePageObject {
     public void userClickOnButtonAddProduct() {
         middlemanUserProductsPages.clickOnBtnAddPopUp();
     }
-//    @And("user see alert success add product & click OK")
-//    public void userSeeAlertSuccessAddProductClickOK()  {
-//        middlemanUserProductsPages.alertSuccessfullyAddProduct();
-//    }
+
 
     @Then("user can see success add product to my product page")
     public void userCanSeeSuccessAddProductToMyProductPage() {
@@ -65,10 +74,16 @@ public class MiddlemanUserProductsStep extends BasePageObject {
         }
     }
 
-    @Then("user see required alert please enter a number on stock field")
-    public void userSeeRequiredAlertPleaseEnterANumberOnStockField() {
-        middlemanUserProductsPages.isStillOnPopUpAddProduct();
+    @Then("user should stay in the Add Product pop up")
+    public void userStayInAddProductPopUp() {
+        Assert.assertTrue(middlemanUserProductsPages.isStillOnPopUpAddProduct());
 
+    }
+
+
+    @Then("user should stay in the Edit Product pop up")
+    public void userStayInEditProductPopUp() {
+        // harus di implementasi mirip ama kasus user should stay in the Add Product pop up
     }
 
     @Then("user see required alert please enter a number on price field")
@@ -76,9 +91,11 @@ public class MiddlemanUserProductsStep extends BasePageObject {
         middlemanUserProductsPages.isStillOnPopUpAddProduct();
     }
 
-    @And("user see reuired alert internal error add product & click OK")
-    public void userSeeReuiredAlertInternalErrorAddProductClickOK() {
-        middlemanUserProductsPages.generalAlertAccept2();
+    @And("user can see alert with message {string} & click OK")
+    public void userSeeReuiredAlertInternalErrorAddProductClickOK(String errorAlert) {
+        String textAlert = middlemanUserProductsPages.generalAlertAcceptWithTextAssert(errorAlert);
+        // check kalau stringnya sama atau tidak. karena String, maka harus pakai method .equals
+        Assert.assertTrue(errorAlert.equals(textAlert));
     }
 
     @Then("user back to my product page")
@@ -96,4 +113,58 @@ public class MiddlemanUserProductsStep extends BasePageObject {
     public void userSuccessUpdateProductToMyProductPage() {
         middlemanUserProductsPages.isSuccessRedirectToMyProduct();
     }
+
+    @When ("user click on button edit in a product list index {int}")
+    public void userClickEditOnProductList(int index) {
+        // cari element edit di product list My Product
+        // trus di click
+        middlemanUserProductsPages.clickOnBtnEditProduct(index);
+    }
+
+
+    @And("user edit new product name {string} with random suffix")
+    public void userEditProductNameWithRandomSuffix(String name) {
+        middlemanUserProductsPages.editProductName(name+System.currentTimeMillis());
+    }
+
+
+    @And("user edit product name {string}")
+    public void userEditProductName(String name) {
+        middlemanUserProductsPages.editProductName(name);
+    }
+
+
+    @And("user edit unit {string}")
+    public void userEditUnit(String unit) {
+        middlemanUserProductsPages.editProductUnit(unit);
+    }
+    @And("user edit stock {string}")
+    public void userEditStock(String stock) {
+        middlemanUserProductsPages.editProductStock(stock);
+    }
+    @And("user edit price {string}")
+    public void userEditPrice(String price) {
+        middlemanUserProductsPages.editProductPrice(price);
+    }
+
+
+    @And("user clear product name")
+    public void userEditProductName() {
+        middlemanUserProductsPages.clearProductName();
+    }
+
+    @And("user clear unit")
+    public void userEditUnit() {
+        middlemanUserProductsPages.clearProductUnit();
+    }
+    @And("user clear stock")
+    public void userEditStock() {
+        middlemanUserProductsPages.clearProductStock();
+    }
+    @And("user clear price")
+    public void userEditPrice() {
+        middlemanUserProductsPages.clearProductPrice();
+    }
+
+
 }

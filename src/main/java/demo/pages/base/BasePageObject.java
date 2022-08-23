@@ -45,6 +45,11 @@ public class BasePageObject {
         getDriver().findElement(element).sendKeys(text);
     }
 
+    public void clearInput(By element) {
+        waitUntil(ExpectedConditions.visibilityOfElementLocated(element), timeout);
+        getDriver().findElement(element).clear();
+    }
+
     public boolean isPresent(By element) {
         return getDriver().findElement(element).isDisplayed();
     }
@@ -145,19 +150,19 @@ public class BasePageObject {
         wait(timeout);
     }
 
-    public void generalAlertAccept2() {
-        wait(2000);
-        Alert alert = getDriver().switchTo().alert();
-        alert.accept();
-        wait(2000);
+    public void generalAlertAccept() {
+        generalAlertAccept(2000);
     }
 
-//    public void alertSuccessAddToCart() {
-//        wait(2000);
-//        Alert alert = getDriver().switchTo().alert();
-//        alert.getText();
-//        wait(2000);
-//    }
+    public String generalAlertAcceptWithTextAssert(String textToAssert) {
+        wait(2000);
+        Alert alert = getDriver().switchTo().alert();
+        String textAlert = alert.getText();
+        alert.accept();
+        wait(2000);
+        return textAlert;
+    }
+
 
     public void alertSuccessAddToCart() throws InterruptedException {
         Thread.sleep(2000);

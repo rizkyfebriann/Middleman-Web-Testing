@@ -166,7 +166,7 @@ public class MiddlemanUserStep1 {
 
     @And("user see alert name minimal format two character & click OK")
     public void userSeeAlertNameMinimalFormatTwoCharacterClickOK() {
-        middlemanUserPages.generalAlertAccept2();
+        middlemanUserPages.generalAlertAccept();
     }
 }
 
