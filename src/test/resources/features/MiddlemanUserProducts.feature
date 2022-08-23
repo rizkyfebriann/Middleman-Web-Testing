@@ -13,7 +13,7 @@ Feature: Login
     And user will see my product page
     When user click button add on page my product
     And user input product image
-    And user input product name "beras pulennn"
+    And user input new product name "beras pulennn" with random suffix
     And user input unit "pcs"
     And user input stock "20"
     And user input price "5000"
@@ -28,13 +28,14 @@ Feature: Login
     And user will see my product page
     When user click button add on page my product
     And user input product image
-    And user input product name "beras pulennn"
+    And user input new product name "beras pulennn" with random suffix
     And user input unit "pcs"
     And user input stock "e"
     And user input price "5000"
     And user click on button add product
     Then user should stay in the Add Product pop up
 
+#sukses
   @AddProductAdmin @Positive
   Scenario: Add product admin to dashboard with registered product name
     Given user go to page my product
@@ -55,7 +56,7 @@ Feature: Login
     Given user go to page my product
     And user will see my product page
     When user click button add on page my product
-    And user input product name "beras pulennn"
+    And user input new product name "beras pulennn" with random suffix
     And user input unit "pcs"
     And user input stock "20"
     And user input price "5000"
@@ -64,32 +65,32 @@ Feature: Login
     And user can see alert internal error with alert "failed to get file" add product & click OK
     Then user back to my product page
 
+#Sukses
   @AddProductAdmin @Negative
   Scenario: Add product user with empty product name
     Given user go to page my product
     And user will see my product page
     When user click button add on page my product
     And user input product image
-    And user input product name ""
     And user input unit "pcs"
     And user input stock "20"
     And user input price "5000"
     And user click on button add product
-    And user can see alert error & click OK
+    And user can see alert internal error with alert "wrong input" add product & click OK
     Then user back to my product page
 
+#Sukses
   @AddProductAdmin @Negative
   Scenario: Add product user with empty stock
     Given user go to page my product
     And user will see my product page
     When user click button add on page my product
     And user input product image
-    And user input product name "beras pulennn"
+    And user input new product name "beras pulennn" with random suffix
     And user input unit "pcs"
-    And user input stock "3"
     And user input price "5000"
     And user click on button add product
-    And user can see alert error & click OK
+    And user can see alert internal error with alert "wrong input" add product & click OK
     Then user back to my product page
 
   @AddProductAdmin @Negatif
@@ -98,7 +99,7 @@ Feature: Login
     And user will see my product page
     When user click button add on page my product
     And user input product image
-    And user input product name "a"
+    And user input new product name "a" with random suffix
     And user input unit "pcs"
     And user input stock "4"
     And user input price "5000"
@@ -112,7 +113,7 @@ Feature: Login
     And user will see my product page
     When user click button add on page my product
     And user input product image
-    And user input product name "12345"
+    And user input new product name "12345" with random suffix
     And user input unit "pcs"
     And user input stock "4"
     And user input price "5000"
@@ -126,7 +127,7 @@ Feature: Login
     And user will see my product page
     When user click button add on page my product
     And user input product image
-    And user input product name "beras@!"
+    And user input new product name "beras@!" with random suffix
     And user input unit "pcs"
     And user input stock "4"
     And user input price "5000"
@@ -141,7 +142,7 @@ Feature: Login
     And user will see my product page
     When user click button add on page my product
     And user input product image
-    And user input product name "beras pulen"
+    And user input new product name "beras pulennn" with random suffix
     And user input unit "pcs"
     And user input stock "4"
     And user input price "5000"

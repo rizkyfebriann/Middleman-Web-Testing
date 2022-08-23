@@ -36,10 +36,18 @@ public class MiddlemanUserProductsStep extends BasePageObject {
     public void userInputProductImage() {
         middlemanUserProductsPages.inputProductImage();
     }
-    @And("user input product name {string}")
-    public void userInputProductName(String name) {
+    @And("user input new product name {string} with random suffix")
+    public void userInputProductNameWithRandomSuffix(String name) {
         middlemanUserProductsPages.inputProductName(name+System.currentTimeMillis());
     }
+
+
+    @And("user input product name {string}")
+    public void userInputProductName(String name) {
+        middlemanUserProductsPages.inputProductName(name);
+    }
+
+
     @And("user input unit {string}")
     public void userInputUnit(String unit) {
         middlemanUserProductsPages.inputProductUnit(unit);
