@@ -6,7 +6,7 @@ Feature: Login
     And user see alert login success & click OK
     Then user success login
 
-
+#sukses
   @AddProductAdmin @Positive
   Scenario: Add product user to my product
     Given user go to page my product
@@ -35,7 +35,7 @@ Feature: Login
     And user click on button add product
     Then user should stay in the Add Product pop up
 
-#sukses
+#Sukses, tapi harusnya error?
   @AddProductAdmin @Positive
   Scenario: Add product admin to dashboard with registered product name
     Given user go to page my product
@@ -93,6 +93,7 @@ Feature: Login
     And user can see alert internal error with alert "wrong input" add product & click OK
     Then user back to my product page
 
+#Sukses, tapi harusnya error?
   @AddProductAdmin @Negatif
   Scenario: Add product user with name product using one character
     Given user go to page my product
@@ -107,6 +108,7 @@ Feature: Login
     And user see alert success add product & click OK
     Then user back to my product page
 
+#Sukses, tapi harusnya error?
   @AddProductAdmin @Positive
   Scenario: Add product user with name product numeric
     Given user go to page my product
@@ -121,6 +123,7 @@ Feature: Login
     And user see alert success add product & click OK
     Then user back to my product page
 
+#Sukses, tapi harusnya error?
   @AddProductAdmin @Positive
   Scenario: Add product user with name product using special character
     Given user go to page my product
