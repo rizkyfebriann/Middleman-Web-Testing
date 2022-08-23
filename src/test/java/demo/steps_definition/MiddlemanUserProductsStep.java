@@ -54,7 +54,7 @@ public class MiddlemanUserProductsStep extends BasePageObject {
     }
     @And("user input stock {string}")
     public void userInputStock(String stock) {
-        middlemanUserProductsPages.inputinputProductStock(stock);
+        middlemanUserProductsPages.inputProductStock(stock);
     }
     @And("user input price {string}")
     public void userInputPrice(String price) {
@@ -64,10 +64,7 @@ public class MiddlemanUserProductsStep extends BasePageObject {
     public void userClickOnButtonAddProduct() {
         middlemanUserProductsPages.clickOnBtnAddPopUp();
     }
-//    @And("user see alert success add product & click OK")
-//    public void userSeeAlertSuccessAddProductClickOK()  {
-//        middlemanUserProductsPages.alertSuccessfullyAddProduct();
-//    }
+
 
     @Then("user can see success add product to my product page")
     public void userCanSeeSuccessAddProductToMyProductPage() {
@@ -115,5 +112,33 @@ public class MiddlemanUserProductsStep extends BasePageObject {
     public void userClickEditOnProductList(int index) {
         // cari element edit di product list My Product
         // trus di click
+        middlemanUserProductsPages.clickOnBtnEditProduct(index);
     }
+
+
+    @And("user edit new product name {string} with random suffix")
+    public void userEditProductNameWithRandomSuffix(String name) {
+        middlemanUserProductsPages.editProductName(name+System.currentTimeMillis());
+    }
+
+
+    @And("user edit product name {string}")
+    public void userEditProductName(String name) {
+        middlemanUserProductsPages.editProductName(name);
+    }
+
+
+    @And("user edit unit {string}")
+    public void userEditUnit(String unit) {
+        middlemanUserProductsPages.editProductUnit(unit);
+    }
+    @And("user edit stock {string}")
+    public void userEditStock(String stock) {
+        middlemanUserProductsPages.editProductStock(stock);
+    }
+    @And("user edit price {string}")
+    public void userEditPrice(String price) {
+        middlemanUserProductsPages.editProductPrice(price);
+    }
+
 }

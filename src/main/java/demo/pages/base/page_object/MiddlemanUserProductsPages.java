@@ -18,22 +18,28 @@ public class MiddlemanUserProductsPages extends BasePageObject {
     By elementInputProductImage = By.xpath("//form[@id='form-add']//input[@id='input-image']");
     By elementInputProductName = By.xpath("//form[@id='form-add']//input[@id='input-name']");
     By elementInputProductUnit = By.xpath("//form[@id='form-add']//input[@id='input-unit']");
+
+
+
+
     By elementInputProductStock = By.xpath("//body/div[@id='__next']/div[5]/div[1]/form[1]/div[1]/input[1]");
     By elementInputProductPrice = By.xpath("//body/div[@id='__next']/div[5]/div[1]/form[1]/div[1]/input[2]");
+
+
+
+    By elementEditInputProductImage = By.xpath("//form[@id='form-edit']//input[@id='input-image']");
+    By elementEditInputProductName = By.xpath("//form[@id='form-edit']//input[@id='input-name']");
+    By elementEditInputProductUnit = By.xpath("//form[@id='form-edit']//input[@id='input-unit']");
+    By elementEditInputProductStock = By.xpath("//body/div[@id='__next']/div[5]/div[1]/form[1]/div[1]/input[1]");
+    By elementEditInputProductPrice = By.xpath("//body/div[@id='__next']/div[5]/div[1]/form[1]/div[1]/input[2]");
+
+
+
     By elementBtnAdd = By.id("btn-add");
     By elementBtnCancel = By.id("btn-cancel");
     By elementLabelDashboard = By.xpath("//h1[contains(text(),'Dashboard')]");
     By elementBtnEditProduct = By.id("btn-edit");
     By elementBtnCancelProduct = By.id("btn-cancel");
-
-//    By elementinputProductImage = By.xpath("//body/div[@id='__next']/div[6]/div[1]/form[1]/input[1]");
-
-//    By elementinputProductName = By.xpath ("//body/div[@id='__next']/div[6]/div[1]/form[1]/input[2]");
-//    By elementinputDataUnit = By.xpath("//body/div[@id='__next']/div[6]/div[1]/form[1]/input[3]");
-//    By elementinputDataStock = By.xpath("//body/div[@id='__next']/div[6]/div[1]/form[1]/div[1]/input[1]");
-//    By elementinputDataPrice = By.xpath("//body/div[@id='__next']/div[6]/div[1]/form[1]/div[1]/input[2]");
-//    By elementButtonSuccessAdd = By.xpath("//body/div[@id='__next']/div[6]/div[1]/form[1]/div[2]/button[1]");
-//
 
     public void clickMenuMyProduct(){
        wait(5000);
@@ -64,9 +70,27 @@ public class MiddlemanUserProductsPages extends BasePageObject {
     public void inputProductPrice(String price) {
         typeOn(elementInputProductPrice, price);
     }
-    public void inputinputProductStock(String stock) {
+    public void inputProductStock(String stock) {
         typeOn(elementInputProductStock, stock);
     }
+
+    public void editProductName(String name){
+        typeOn(elementEditInputProductName, name);
+    }
+    public void editProductUnit(String unit) {
+        typeOn(elementEditInputProductUnit, unit);
+    }
+    public void editProductPrice(String price) {
+        typeOn(elementEditInputProductPrice, price);
+    }
+    public void editProductStock(String stock) {
+        typeOn(elementEditInputProductStock, stock);
+    }
+
+
+
+
+
     public void clickOnBtnAddPopUp() {
         wait(1000);
         clickOn(elementBtnAdd);
@@ -88,6 +112,12 @@ public class MiddlemanUserProductsPages extends BasePageObject {
     }
     public void clickOnBtnEditProduct() {
           clickOn(elementBtnEditProduct);
+    }
+
+    public void clickOnBtnEditProduct(int index) {
+        String xpathEditButton = "//button[@id='btn-edit-modal'][" + index + "]";
+        By elementEditButton = By.xpath(xpathEditButton);
+        clickOn(elementEditButton);
     }
 
     public void clickOnBtnCancelProduct() {
