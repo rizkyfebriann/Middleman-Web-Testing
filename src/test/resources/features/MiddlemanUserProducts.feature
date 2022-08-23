@@ -62,7 +62,7 @@ Feature: Login
     And user input price "5000"
     And user click on button add product
       # check alert text
-    And user can see alert internal error with alert "failed to get file" add product & click OK
+    And user can see alert with message "failed to get file" & click OK
     Then user back to my product page
 
 #Sukses
@@ -76,7 +76,7 @@ Feature: Login
     And user input stock "20"
     And user input price "5000"
     And user click on button add product
-    And user can see alert internal error with alert "wrong input" add product & click OK
+    And user can see alert with message "wrong input" & click OK
     Then user back to my product page
 
 #Sukses
@@ -90,7 +90,7 @@ Feature: Login
     And user input unit "pcs"
     And user input price "5000"
     And user click on button add product
-    And user can see alert internal error with alert "wrong input" add product & click OK
+    And user can see alert with message "wrong input" & click OK
     Then user back to my product page
 
 #Sukses, tapi harusnya error?
@@ -150,7 +150,7 @@ Feature: Login
     And user edit stock "4"
     And user edit price "5000"
     And user click on button edit
-    And user can see alert internal error with alert "success update data" add product & click OK
+    And user can see alert with message "success update data" & click OK
     Then user success update product to my product page
 
   @UpdateProductAdmin @Positive
