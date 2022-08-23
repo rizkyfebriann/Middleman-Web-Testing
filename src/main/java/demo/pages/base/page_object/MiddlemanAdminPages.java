@@ -32,12 +32,13 @@ public class MiddlemanAdminPages extends BasePageObject {
     By elementResultNotFound = By.xpath("//body/div[@id='__next']/div[1]");
 
     public void clickButtonAddProduct() {
+        wait (2000);
         clickOn(elementButtonAddProduct);
     }
     public void inputProductImage() {
         wait(2000);
         WebElement element= getDriver().switchTo().activeElement().findElement(elementinputProductImage);
-        element.sendKeys(IMAGE_FOLDER + "/minyak-bimoli.jpeg");
+        element.sendKeys(IMAGE_FOLDER + "/aqua-gelas.jpeg");
     }
 
     public void inputProductName(String name){
@@ -93,12 +94,13 @@ public class MiddlemanAdminPages extends BasePageObject {
     }
 
     public void clickButtonEditProduct() {
+        wait(2000);
         clickOn(elementButtonEditProduct);
     }
     public void updateProductImage (){
         wait(2000);
         WebElement element= getDriver().switchTo().activeElement().findElement(elementUpdateProductImage);
-        element.sendKeys(IMAGE_FOLDER + "/minyak-fortune.jpeg");
+        element.sendKeys(IMAGE_FOLDER + "/new-aquagelas.jpeg");
     }
     public void updateProductName (String name){
         wait(2000);
@@ -134,6 +136,7 @@ public class MiddlemanAdminPages extends BasePageObject {
        return isPresent(elementLabelDashboard);
    }
    public void clickButtonDeleteProduct(){
+        wait(2000);
         clickOn(elementDeleteProduct);
    }
    public void clickButtonSuccesDelete(){
