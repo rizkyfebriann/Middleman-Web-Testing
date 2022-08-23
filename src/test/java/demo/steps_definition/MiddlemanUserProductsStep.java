@@ -15,8 +15,12 @@ public class MiddlemanUserProductsStep extends BasePageObject {
 //    MiddlemanAdminPages middlemanAdminPages = new MiddlemanAdminPages();
     MiddlemanUserProductsPages middlemanUserProductsPages = new MiddlemanUserProductsPages();
 
+//    @Given("user go to page my product")
+//    public void userGoToPageMyProduct() throws InterruptedException {
+//        middlemanUserProductsPages.clickMenuMyProduct();
+//    }
     @Given("user go to page my product")
-    public void userGoToPageMyProduct() throws InterruptedException {
+    public void userGoToPageMyProduct(){
         middlemanUserProductsPages.clickMenuMyProduct();
     }
 
@@ -29,8 +33,8 @@ public class MiddlemanUserProductsStep extends BasePageObject {
         middlemanUserProductsPages.clickButtonAddProduct();
     }
     @And("user input product image")
-    public void userInputProductImage(String image) {
-        middlemanUserProductsPages.inputProductImage(image);
+    public void userInputProductImage() {
+        middlemanUserProductsPages.inputProductImage();
     }
     @And("user input product name {string}")
     public void userInputProductName(String name) {
