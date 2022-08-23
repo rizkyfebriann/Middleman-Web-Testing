@@ -94,7 +94,7 @@ Feature: Login
     And user can see alert with message "wrong input" & click OK
     Then user back to my product page
 
-#Sukses, tapi harusnya error?
+#Sukses, kadang harus running 2 kali
   @AddProductUser @Positive
   Scenario: Add product user with name product using one character
     Given user go to page my product
@@ -124,14 +124,14 @@ Feature: Login
     And user see alert success add product & click OK
     Then user back to my product page
 
-#Sukses
+#Sukses, kadang harus run 2 kali
   @AddProductUser @Positive
   Scenario: Add product user with name product using special character
     Given user go to page my product
     And user will see my product page
     When user click button add on page my product
     And user input product image
-    And user edit new product name "beras@!" with random suffix
+    And user input product name "beras@!"
     And user input unit "pcs"
     And user input stock "4"
     And user input price "5000"
@@ -139,13 +139,13 @@ Feature: Login
     And user see alert success add product & click OK
     Then user back to my product page
 
-# Sukses
+# Sukses,kadang harus run 2 kali
   @AddProductUser @Positive
   Scenario: Update product user with valid data
     Given user go to page my product
     And user will see my product page
     When user click on button edit in a product list index 1
-    And user input product image
+    And user edit product image
     And user edit new product name "beras pulennn" with random suffix
     And user edit unit "pcs"
     And user edit stock "4"

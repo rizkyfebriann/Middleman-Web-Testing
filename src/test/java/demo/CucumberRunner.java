@@ -8,6 +8,6 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         stepNotifications = true,
         plugin = {"json:build/cucumber.json", "pretty", "html:build/result"},
-        features = "src/test/resources/features", tags = "@Web")
+        features = "src/test/resources/features", tags = "@AddToCart")
 public class CucumberRunner {
 }
