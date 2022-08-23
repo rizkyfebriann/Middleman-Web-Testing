@@ -77,13 +77,15 @@ public class MiddlemanUserProductsStep extends BasePageObject {
     @Then("user should stay in the Add Product pop up")
     public void userStayInAddProductPopUp() {
         Assert.assertTrue(middlemanUserProductsPages.isStillOnPopUpAddProduct());
-
     }
-
+//    @Then("user should stay in the Edit Product pop up")
+//    public void userStayInEditProductPopUp() {
+//        Assert.assertTrue(middlemanUserProductsPages.isStillOnPopUpEditProduct());
+//    }
 
     @Then("user should stay in the Edit Product pop up")
     public void userStayInEditProductPopUp() {
-        // harus di implementasi mirip ama kasus user should stay in the Add Product pop up
+        Assert.assertTrue(middlemanUserProductsPages.isStillOnPopUpEditProduct());
     }
 
     @Then("user see required alert please enter a number on price field")
@@ -166,5 +168,13 @@ public class MiddlemanUserProductsStep extends BasePageObject {
         middlemanUserProductsPages.clearProductPrice();
     }
 
+    @And("user clear name")
+    public void userClearName() {
+        middlemanUserProductsPages.clearProductName();
+    }
 
+    @And("user edit product image")
+    public void userEditProductImage() {
+        middlemanUserProductsPages.editProductImage();
+    }
 }

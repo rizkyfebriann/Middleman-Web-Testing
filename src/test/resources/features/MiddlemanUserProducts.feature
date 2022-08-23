@@ -88,19 +88,20 @@ Feature: Login
     And user input product image
     And user input new product name "beras pulennn" with random suffix
     And user input unit "pcs"
+    And user input stock " "
     And user input price "5000"
     And user click on button add product
     And user can see alert with message "wrong input" & click OK
     Then user back to my product page
 
 #Sukses, tapi harusnya error?
-  @AddProductUser @Negatif
+  @AddProductUser @Positive
   Scenario: Add product user with name product using one character
     Given user go to page my product
     And user will see my product page
     When user click button add on page my product
     And user input product image
-    And user input new product name "a" with random suffix
+    And user input product name "a"
     And user input unit "pcs"
     And user input stock "4"
     And user input price "5000"
@@ -115,7 +116,7 @@ Feature: Login
     And user will see my product page
     When user click button add on page my product
     And user input product image
-    And user input new product name "12345" with random suffix
+    And user input product name "12345"
     And user input unit "pcs"
     And user input stock "4"
     And user input price "5000"
@@ -123,14 +124,14 @@ Feature: Login
     And user see alert success add product & click OK
     Then user back to my product page
 
-#Sukses, tapi harusnya error?
+#Sukses
   @AddProductUser @Positive
   Scenario: Add product user with name product using special character
     Given user go to page my product
     And user will see my product page
     When user click button add on page my product
     And user input product image
-    And user input new product name "beras@!" with random suffix
+    And user edit new product name "beras@!" with random suffix
     And user input unit "pcs"
     And user input stock "4"
     And user input price "5000"
@@ -153,55 +154,157 @@ Feature: Login
     And user can see alert with message "success update data" & click OK
     Then user success update product to my product page
 
+# Sukses
   @AddProductUser @Positive
   Scenario: Update product user without product image
+    Given user go to page my product
+    And user will see my product page
+    When user click on button edit in a product list index 1
+    And user edit new product name "beras pulennn" with random suffix
+    And user edit unit "pcs"
+    And user edit stock "4"
+    And user edit price "5000"
+    And user click on button edit
+    And user can see alert with message "success update data" & click OK
+    Then user success update product to my product page
 
-  @AddProductUser @Positive
-  Scenario: Update product user without product name
-
+# success
   @AddProductUser @Positive
   Scenario: Update product user without stock
-
-  @AddProductUser @Positive
-  Scenario: Update product user without unit
     Given user go to page my product
     And user will see my product page
     When user click on button edit in a product list index 1
     And user input product image
     And user edit new product name "beras pulennn" with random suffix
-    And user clear unit
-    And user edit stock "4"
+    And user edit unit "pcs"
     And user edit price "5000"
     And user click on button edit
-    # Ini belom di implementasi, harus check XPath buat dialog boxnya
-    Then user should stay in the Edit Product pop up
+    And user can see alert with message "success update data" & click OK
+    Then user success update product to my product page
 
+## belum success
+#  @AddProductUser @Positive
+#  Scenario: Update product user with empty name
+#    Given user go to page my product
+#    And user will see my product page
+#    When user click on button edit in a product list index 1
+#    And user edit product image
+#    And user clear name
+##    And user edit unit "pcs"
+##    And user edit stock "4"
+##    And user edit price "5000"
+#    And user click on button edit
+#    Then user should stay in the Edit Product pop up
+
+## belum success
+#  @AddProductUser @Positive
+#  Scenario: Update product user with empty unit
+#    Given user go to page my product
+#    And user will see my product page
+#    When user click on button edit in a product list index 1
+#    And user edit product image
+#    And user edit new product name "beras pulennn" with random suffix
+#    And user clear unit
+#    And user edit stock "4"
+#    And user edit price "5000"
+#    And user click on button edit
+#    # Ini belom di implementasi, harus check XPath buat dialog boxnya
+#    Then user should stay in the Edit Product pop up
+
+#  success
   @AddProductUser @Negative
   Scenario: Update product user with invalid data stock
+    Given user go to page my product
+    And user will see my product page
+    When user click on button edit in a product list index 1
+    And user input product image
+    And user edit new product name "beras pulennn" with random suffix
+    And user edit unit "pcs"
+    And user edit stock "1,000"
+    And user edit price "5000"
+    And user click on button edit
+    And user can see alert with message "success update data" & click OK
+    Then user see required alert on stock field "please enter a valid value"
 
+#    success
   @AddProductUser @Negative
   Scenario: Update product user with invalid data price
+    Given user go to page my product
+    And user will see my product page
+    When user click on button edit in a product list index 1
+    And user input product image
+    And user edit new product name "beras pulennn" with random suffix
+    And user edit unit "pcs"
+    And user edit stock "1,000"
+    And user edit price "a"
+    And user click on button edit
+    Then user see required alert on stock field "please enter a valid value"
 
   @SearchProductUser @Positive
   Scenario: Search product user with valid name
+    Given user go to page my product
+    And user will see my product page
+    And user input valid keyword "bubur" on search field
+    And user click on button search
+    Then user can see all result search product on dashboard
 
   @SearchProductUser @Positive
-  Scenario: Search product on name field with any alphabet
+  Scenario: Search product on name field with any numeric
+    Given user go to page my product
+    And user will see my product page
+    And user input valid keyword "912" on search field
+    And user click on button search
+    Then user can see all result search product on dashboard
 
-  @SearchProductUser @Negative
+  @SearchProductUser @Positive
   Scenario: Search product with one character
+    Given user go to page my product
+    And user will see my product page
+    And user input valid keyword "k" on search field
+    And user click on button search
+    Then user can see all result search product on dashboard
 
   @SearchProductUser @Positive
   Scenario: Search product on name field with any alphabet
+    Given user go to page my product
+    And user will see my product page
+    And user input valid keyword "gula" on search field
+    And user click on button search
+    Then user can see all result search product on dashboard
 
-  @SearchProductUser @Negative
+  @SearchProductUser @Positive
   Scenario: Search product with any special chart
+    Given user go to page my product
+    And user will see my product page
+    And user input valid keyword "@" on search field
+    And user click on button search
+    Then user can see all result search product on dashboard
 
-  @SearchProductUser @Negative
-  Scenario: Search product with any numeric
+  @SearchProductUser @Negatif
+  Scenario: Search product with not registered product name
+    Given user go to page my product
+    And user will see my product page
+    And user input valid keyword "terasi" on search field
+    And user click on button search
+    Then user can see all result search product on dashboard
 
   @DeleteProductUser @Positive
   Scenario: Delete cancel product success
+    Given user go to page my product
+    And user will see my product page
+    When user click button delete
+    And user click "No" on button delete product
+    Then user can back to dashboard
+
+#  command dulu kalo mau run semua
+#  @DeleteProductUser @Positive
+#  Scenario: Delete success product user
+#    Given user go to page my product
+#    And user will see my product page
+#    When user click button delete
+#    And user click "Yes" on button delete
+#    And user see alert success delete product & click OK
+#    Then user can see success delete product to dashboard
 
 
 

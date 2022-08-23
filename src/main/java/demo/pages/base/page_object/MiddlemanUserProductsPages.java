@@ -19,20 +19,15 @@ public class MiddlemanUserProductsPages extends BasePageObject {
     By elementInputProductName = By.xpath("//form[@id='form-add']//input[@id='input-name']");
     By elementInputProductUnit = By.xpath("//form[@id='form-add']//input[@id='input-unit']");
 
-
-
-
     By elementInputProductStock = By.xpath("//body/div[@id='__next']/div[5]/div[1]/form[1]/div[1]/input[1]");
     By elementInputProductPrice = By.xpath("//body/div[@id='__next']/div[5]/div[1]/form[1]/div[1]/input[2]");
-
-
 
     By elementEditInputProductImage = By.xpath("//form[@id='form-edit']//input[@id='input-image']");
     By elementEditInputProductName = By.xpath("//form[@id='form-edit']//input[@id='input-name']");
     By elementEditInputProductUnit = By.xpath("//form[@id='form-edit']//input[@id='input-unit']");
     By elementEditInputProductStock = By.xpath("//form[@id='form-edit']//input[@id='input-stock']");
     By elementEditInputProductPrice = By.xpath("//form[@id='form-edit']//input[@id='input-price']");
-
+    By elementModalBoxEditProduct = By.xpath("//*[@id=\"__next\"]/div[4]/div[4]/div");
 
 
     By elementBtnAdd = By.id("btn-add");
@@ -61,6 +56,13 @@ public class MiddlemanUserProductsPages extends BasePageObject {
 //        typeOn(elementInputProductImage, image + (IMAGE_FOLDER + "/beras_pulen.jpeg"));
     }
 
+    public void editProductImage() {
+        wait(2000);
+        WebElement element= getDriver().switchTo().activeElement().findElement(elementEditInputProductImage);
+        element.sendKeys(IMAGE_FOLDER + "/beras.jpeg");
+//        typeOn(elementInputProductImage, image + (IMAGE_FOLDER + "/beras.jpeg"));
+    }
+
     public void inputProductName(String name){
         typeOn(elementInputProductName, name);
     }
@@ -74,6 +76,10 @@ public class MiddlemanUserProductsPages extends BasePageObject {
         typeOn(elementInputProductStock, stock);
     }
 
+    public void editProductImage(String image){
+        clearProductImage();
+        typeOn(elementEditInputProductName, image);
+    }
     public void editProductName(String name){
         clearProductName();
         typeOn(elementEditInputProductName, name);
@@ -90,7 +96,9 @@ public class MiddlemanUserProductsPages extends BasePageObject {
        clearProductStock();
         typeOn(elementEditInputProductStock, stock);
     }
-
+    public void clearProductImage(){
+        clearInput(elementEditInputProductImage);
+    }
     public void clearProductName(){
         clearInput(elementEditInputProductName);
     }
@@ -103,10 +111,6 @@ public class MiddlemanUserProductsPages extends BasePageObject {
     public void clearProductStock() {
         clearInput(elementEditInputProductStock);
     }
-
-
-
-
 
     public void clickOnBtnAddPopUp() {
         wait(1000);
@@ -127,6 +131,11 @@ public class MiddlemanUserProductsPages extends BasePageObject {
         wait(5000);
         return isPresent(elementModalBoxAddProduct);
     }
+    public boolean isStillOnPopUpEditProduct() {
+        wait(2000);
+        return isPresent(elementModalBoxEditProduct);
+    }
+
     public void clickOnBtnEditProduct() {
           clickOn(elementBtnEditProduct);
     }
