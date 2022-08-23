@@ -21,6 +21,7 @@ Feature: Login
     And user see alert success add product & click OK
     Then user can see success add product to my product page
 
+ #Sukses
   @AddProductAdmin @Positive
   Scenario: Add product user to my product page with invalid stock
     Given user go to page my product
@@ -32,22 +33,7 @@ Feature: Login
     And user input stock "e"
     And user input price "5000"
     And user click on button add product
-    And user see alert success add product & click OK
-    Then user see required alert please enter a number on stock field
-
-  @AddProductAdmin @Positive
-  Scenario: Add product user to my product page with invalid price
-    Given user go to page my product
-    And user will see my product page
-    When user click button add on page my product
-    And user input product image
-    And user input product name "beras pulennn"
-    And user input unit "pcs"
-    And user input stock "20"
-    And user input price "5,000"
-    And user click on button add product
-    And user see alert success add product & click OK
-    Then user see required alert please enter a number on price field
+    Then user should stay in the Add Product pop up
 
   @AddProductAdmin @Positive
   Scenario: Add product admin to dashboard with registered product name

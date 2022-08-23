@@ -69,9 +69,9 @@ public class MiddlemanUserProductsStep extends BasePageObject {
         }
     }
 
-    @Then("user see required alert please enter a number on stock field")
+    @Then("user should stay in the Add Product pop up")
     public void userSeeRequiredAlertPleaseEnterANumberOnStockField() {
-        middlemanUserProductsPages.isStillOnPopUpAddProduct();
+        Assert.assertTrue(middlemanUserProductsPages.isStillOnPopUpAddProduct());
 
     }
 
