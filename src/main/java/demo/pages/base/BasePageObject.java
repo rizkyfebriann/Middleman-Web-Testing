@@ -204,4 +204,17 @@ public class BasePageObject {
         wait(2000);
     }
 
+    public void alertSuccessfullyCreateOrderProduct(){
+        wait(2000);
+        Alert successCreateOrderProduct = getDriver().switchTo().alert();
+        successCreateOrderProduct.accept();
+        wait(2000);
+    }
+    public void alertSuccessfullyDeleteProductMyCart(){
+        wait(2000);
+        Alert successDeleteProductMyCart = getDriver().switchTo().alert();
+        successDeleteProductMyCart.accept();
+        wait(2000);
+    }
+
 }
