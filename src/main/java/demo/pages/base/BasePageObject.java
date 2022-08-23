@@ -60,6 +60,12 @@ public class BasePageObject {
         js.executeScript("window.scrollTo(0, 800)");
     }
 
+    public void InnerScrollDown (){
+        wait(2000);
+        JavascriptExecutor jse = (JavascriptExecutor) getDriver();
+        jse.executeScript("scroll(0, 250)"); //y value '250' can be altered
+    }
+
     public void moveToTab(int index) {
         ArrayList<String> tabs = new ArrayList(getDriver().getWindowHandles());
         getDriver().switchTo().window(tabs.get(index));
@@ -73,7 +79,7 @@ public class BasePageObject {
     }
 
     public void alertSuccessRegister() {
-        wait(2000);
+        wait(3000);
         Alert successRegister = getDriver().switchTo().alert();
         successRegister.accept();
         wait(2000);
@@ -195,6 +201,19 @@ public class BasePageObject {
         wait(2000);
         Alert successDeleteProductAdmin = getDriver().switchTo().alert();
         successDeleteProductAdmin.accept();
+        wait(2000);
+    }
+
+    public void alertSuccessfullyCreateOrderProduct(){
+        wait(2000);
+        Alert successCreateOrderProduct = getDriver().switchTo().alert();
+        successCreateOrderProduct.accept();
+        wait(2000);
+    }
+    public void alertSuccessfullyDeleteProductMyCart(){
+        wait(2000);
+        Alert successDeleteProductMyCart = getDriver().switchTo().alert();
+        successDeleteProductMyCart.accept();
         wait(2000);
     }
 
