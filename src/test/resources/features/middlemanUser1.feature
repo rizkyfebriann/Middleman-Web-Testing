@@ -1,7 +1,8 @@
 @Web
 Feature: Login
+
   Background: login user with registered valid email & valid password
-    Given user input email "tokocobacoba23@gmail.com" and password "coba2123"
+    Given user input email "tokomom@gmail.com" and password "coba2123"
     And user click on login button
     And user see alert login success & click OK
     Then user success login
@@ -42,21 +43,21 @@ Feature: Login
     And user input data phone number "081234"
     And user input data address "jalan cinta"
     And user click edit button
-#    Then user stay in the pop up
     And user can see alert phone number less then ten digit & click OK
-    Then user stay in the pop up edit profile
+#    Then user stay in the pop up edit profile
+    Then user should be redirect to page my profile
 
   @user
   Scenario: Update user with already registered email
     When user open page my profile and click button edit
     And user can see pop up edit profile
     And user input data name "toko coba2"
-    And user input data email "tokocobalagi12@gmail.com"
-    And user input data phone number "123457733343"
+    And user input data email "tokomom@gmail.com"
+    And user input data phone number "0812345666613"
     And user input data address "jalan cinta"
     And user click edit button
     And user see alert your email or phone number already registered & click OK
-    Then user stay in the pop up edit profile
+    Then user should be redirect to page my profile
 
   @user
   Scenario: Update user with email not valid
@@ -126,13 +127,13 @@ Feature: Login
     Then user should be redirect to page my profile
 
 #    Dijalankan Ganti Login
-  @user
-  Scenario: Delete user with already registed
-    When user open page my profile and click button delete
-    And user can see pop up verifikasi delete
-    And user choose button yes
-    And user see alert success delete data and klik ok
-    Then user can see redirect to login page
+#  @user
+#  Scenario: Delete user with already registed
+#    When user open page my profile and click button delete
+#    And user can see pop up verifikasi delete
+#    And user choose button yes
+#    And user see alert success delete data and klik ok
+#    Then user can see redirect to login page
 
 
 
