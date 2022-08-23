@@ -7,7 +7,7 @@ Feature: Login
     Then user success login
 
 #sukses
-  @AddProductAdmin @Positive
+  @AddProductUser @Positive
   Scenario: Add product user to my product
     Given user go to page my product
     And user will see my product page
@@ -22,7 +22,7 @@ Feature: Login
     Then user can see success add product to my product page
 
  #Sukses
-  @AddProductAdmin @Positive
+  @AddProductUser @Positive
   Scenario: Add product user to my product page with invalid stock
     Given user go to page my product
     And user will see my product page
@@ -36,7 +36,7 @@ Feature: Login
     Then user should stay in the Add Product pop up
 
 #Sukses, tapi harusnya error?
-  @AddProductAdmin @Positive
+  @AddProductUser @Positive
   Scenario: Add product admin to dashboard with registered product name
     Given user go to page my product
     And user will see my product page
@@ -51,7 +51,7 @@ Feature: Login
     Then user back to my product page
 
  #sukses
-  @AddProductAdmin @Negative
+  @AddProductUser @Negative
   Scenario: Add product user on my product page with empty image product field
     Given user go to page my product
     And user will see my product page
@@ -66,7 +66,7 @@ Feature: Login
     Then user back to my product page
 
 #Sukses
-  @AddProductAdmin @Negative
+  @AddProductUser @Negative
   Scenario: Add product user with empty product name
     Given user go to page my product
     And user will see my product page
@@ -80,7 +80,7 @@ Feature: Login
     Then user back to my product page
 
 #Sukses
-  @AddProductAdmin @Negative
+  @AddProductUser @Negative
   Scenario: Add product user with empty stock
     Given user go to page my product
     And user will see my product page
@@ -94,7 +94,7 @@ Feature: Login
     Then user back to my product page
 
 #Sukses, tapi harusnya error?
-  @AddProductAdmin @Negatif
+  @AddProductUser @Negatif
   Scenario: Add product user with name product using one character
     Given user go to page my product
     And user will see my product page
@@ -109,7 +109,7 @@ Feature: Login
     Then user back to my product page
 
 #Sukses, tapi harusnya error?
-  @AddProductAdmin @Positive
+  @AddProductUser @Positive
   Scenario: Add product user with name product numeric
     Given user go to page my product
     And user will see my product page
@@ -124,7 +124,7 @@ Feature: Login
     Then user back to my product page
 
 #Sukses, tapi harusnya error?
-  @AddProductAdmin @Positive
+  @AddProductUser @Positive
   Scenario: Add product user with name product using special character
     Given user go to page my product
     And user will see my product page
@@ -139,7 +139,7 @@ Feature: Login
     Then user back to my product page
 
 # Sukses
-  @UpdateProductAdmin @Positive
+  @AddProductUser @Positive
   Scenario: Update product user with valid data
     Given user go to page my product
     And user will see my product page
@@ -153,16 +153,16 @@ Feature: Login
     And user can see alert with message "success update data" & click OK
     Then user success update product to my product page
 
-  @UpdateProductAdmin @Positive
+  @AddProductUser @Positive
   Scenario: Update product user without product image
 
-  @UpdateProductAdmin @Positive
+  @AddProductUser @Positive
   Scenario: Update product user without product name
 
-  @UpdateProductAdmin @Positive
+  @AddProductUser @Positive
   Scenario: Update product user without stock
 
-  @UpdateProductAdmin @Positive
+  @AddProductUser @Positive
   Scenario: Update product user without unit
     Given user go to page my product
     And user will see my product page
@@ -176,31 +176,31 @@ Feature: Login
     # Ini belom di implementasi, harus check XPath buat dialog boxnya
     Then user should stay in the Edit Product pop up
 
-  @UpdateProductAdmin @Negative
+  @AddProductUser @Negative
   Scenario: Update product user with invalid data stock
 
-  @UpdateProductAdmin @Negative
+  @AddProductUser @Negative
   Scenario: Update product user with invalid data price
 
-  @SearchProductAdmin @Positive
+  @SearchProductUser @Positive
   Scenario: Search product user with valid name
 
-  @SearchProductAdmin @Positive
+  @SearchProductUser @Positive
   Scenario: Search product on name field with any alphabet
 
-  @SearchProductAdmin @Negative
+  @SearchProductUser @Negative
   Scenario: Search product with one character
 
-  @SearchProductAdmin @Positive
+  @SearchProductUser @Positive
   Scenario: Search product on name field with any alphabet
 
-  @SearchProductAdmin @Negative
+  @SearchProductUser @Negative
   Scenario: Search product with any special chart
 
-  @SearchProductAdmin @Negative
+  @SearchProductUser @Negative
   Scenario: Search product with any numeric
 
-  @DeleteProductAdmin @Positive
+  @DeleteProductUser @Positive
   Scenario: Delete cancel product success
 
 
