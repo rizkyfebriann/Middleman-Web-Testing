@@ -14,7 +14,7 @@ public class MiddlemanPaymentPages extends BasePageObject {
 
     By elementGoToPaymentPage = By.id("to-payment");
 
-    By elementAlreadyOnPaymentPage = By.xpath("//div[contains(text(),'Scarva E Store')]");
+    By elementAlreadyOnPaymentPage = By.xpath("//div[@class=\"payment-list-title\"]");
     By elementChoosePaymentMethodNumber1 = By.xpath("//body/div[@id='app']/div[@id='application']/div[1]/a[1]/div[1]/div[2]");
     By elementInputCreditCardNumber = By.xpath("//*[@id=\"application\"]/div/div[2]/div[2]/input");
     By elementInputExpCreditCard = By.id("card-expiry");
@@ -79,7 +79,7 @@ public class MiddlemanPaymentPages extends BasePageObject {
     }
 
     public boolean isSuccessfullyOnPaymentPage() {
-        wait(5000);
+        wait(6000);
         return isPresent(elementAlreadyOnPaymentPage);
     }
 

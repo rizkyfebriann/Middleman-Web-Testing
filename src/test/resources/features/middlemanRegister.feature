@@ -14,16 +14,16 @@ Feature: Register
     And user see alert register success & click OK
     Then user redirect to login page for login account
   Examples:
-    |nameShop    |email                |phone     |password     |address                  |
-    |Toko Rizky 1|testingtoko3@mail.com|0808080808|test123      |Jalan Surabaya Nih No 100|
-    |Toko Rizky 2|testingtoko4@mail.com|0811111222|test1234     |Jalan Surabaya Nih No 101|
+    |nameShop    |email                 |phone     |password     |address                  |
+    |Toko Rizky 1|testingtoko12@mail.com|0808080125|test123      |Jalan Surabaya Nih No 100|
+    |Toko Rizky 2|testingtoko14@mail.com|0811110128|test1234     |Jalan Surabaya Nih No 101|
 
   @register
   Scenario: Register with name shop using 1 characters
     Given user open register page
     And user input name shop "R"
-    And user input email "testing01@mail.com"
-    And user input phone number "08973839404"
+    And user input email "testing047@mail.com"
+    And user input phone number "08973839477"
     And user input password "test1234"
     And user input address "Jalan Surabaya Blok T"
     Then user click sign up button
@@ -34,8 +34,8 @@ Feature: Register
   Scenario: Register with name shop using 2 characters or more
     Given user open register page
     And user input name shop "Toko Rizky 3"
-    And user input email "testing12@mail.com"
-    And user input phone number "08973839567"
+    And user input email "testink19@mail.com"
+    And user input phone number "08973839234"
     And user input password "test1234"
     And user input address "Jalan Surabaya Blok T"
     Then user click sign up button
@@ -47,23 +47,23 @@ Feature: Register
     Given user open register page
     And user input name shop "Toko Cuan"
     And user input email "<email>"
-    And user input phone number "08574893829"
+    And user input phone number "08574893452"
     And user input password "test123"
     And user input address "Jalan Surabaya Blok H Nomor 100"
     Then user click sign up button
     And user see alert on email field for filling valid format email
     Examples:
       |email        |
-      |testing.co.id|
-      |testing@.com |
+      |testing2.co.id|
+      |testing3@.com |
 
 #Setelah running scenario ini, ganti email & passwordnya karena jika di run lagi.. sudah terdaftar
   @register
   Scenario: Register with valid format email
     Given user open register page
     And user input name shop "Toko Rizky 4"
-    And user input email "testing02@gmail.com"
-    And user input phone number "08946538274"
+    And user input email "testing021@gmail.com"
+    And user input phone number "08946538485"
     And user input password "test1234"
     And user input address "Jalan Surabaya Blok T"
     Then user click sign up button
@@ -74,7 +74,7 @@ Feature: Register
   Scenario Outline: Register with 1 digit until 9 digit for phone number
     Given user open register page
     And user input name shop "Toko Cuan"
-    And user input email "testing04@gmail.com"
+    And user input email "testing2738@gmail.com"
     And user input phone number "<phone>"
     And user input password "test123"
     And user input address "Jalan Surabaya Blok H Nomor 100"
@@ -82,16 +82,16 @@ Feature: Register
     And user see alert minimum phone number digit is not enough and click OK
     Examples:
       |phone        |
-      |081          |
-      |081234567    |
+      |0856         |
+      |081234676    |
 
 #Setelah running scenario ini, ganti email & passwordnya karena jika di run lagi.. sudah terdaftar
   @register
   Scenario: Register with valid format phone number
     Given user open register page
     And user input name shop "Toko Rizky 4"
-    And user input email "testing05@gmail.com"
-    And user input phone number "089465382745"
+    And user input email "testing082@gmail.com"
+    And user input phone number "089465382562"
     And user input password "test1234"
     And user input address "Jalan Surabaya Blok T"
     Then user click sign up button
@@ -107,15 +107,16 @@ Feature: Register
     And user input phone number "<phone>"
     And user input password "<password>"
     And user input address "Jalan Surabaya Blok H Nomor 100"
+    Then user click sign up button
     And user see alert register success & click OK
     Then user redirect to login page for login account
     Examples:
-      |nameshop        |email           |phone       |password       |
-      |Toko Cuan 2     |tester1@mail.com|089384983411|qqqqqq         |
-      |Toko Cuan 3     |tester2@mail.com|089384983412|RRRRRR         |
-      |Toko Cuan 4     |tester3@mail.com|089384983413|123456         |
-      |Toko Cuan 5     |tester4@mail.com|089384983414|!@#$%^&*       |
-      |Toko Cuan 6     |tester5@mail.com|089384983415|testing123!@#$%|
+      |nameshop        |email            |phone       |password       |
+      |Toko Cuan 2     |tester16@mail.com|083456983567|qqqqqq         |
+      |Toko Cuan 3     |tester17@mail.com|089583983546|RRRRRR         |
+      |Toko Cuan 4     |tester18@mail.com|084564983123|123456         |
+      |Toko Cuan 5     |tester19@mail.com|082838983178|!@#$%^&*       |
+      |Toko Cuan 6     |tester21@mail.com|089384383750|testing123!@#$%|
 
 #Setelah running scenario ini, ganti email & passwordnya karena jika di run lagi.. sudah terdaftar
   @register
@@ -131,16 +132,16 @@ Feature: Register
     Then user redirect to login page for login account
     Examples:
     |email                 |phone            |address      |
-    |tester001@mail.com    |083475869581     |F            |
-    |tester002@mail.com    |083475869582     |Jalan        |
-    |tester003@mail.com    |083475869583     |No 123!@#    |
-    |tester004@mail.com    |083475869584     |!@#$%        |
+    |tester017@mail.com    |083475864422     |F            |
+    |tester021@mail.com    |083475862334     |Jalan        |
+    |tester026@mail.com    |083475861579     |No 123!@#    |
+    |tester027@mail.com    |083475862032     |!@#$%        |
 
   @register
   Scenario: Register without fill name shop
     Given user open register page
-    And user input email "tester0001@mail.com"
-    And user input phone number "08574893829"
+    And user input email "tester0223@mail.com"
+    And user input phone number "08574893577"
     And user input password "test123"
     And user input address "Jalan Surabaya Blok H Nomor 100"
     Then user click sign up button
@@ -150,7 +151,7 @@ Feature: Register
   Scenario: Register without fill email
     Given user open register page
     And user input name shop "Toko Testing Cuan Bismillah"
-    And user input phone number "08574893829"
+    And user input phone number "08574894678"
     And user input password "test123"
     And user input address "Jalan Surabaya Blok H Nomor 100"
     Then user click sign up button
@@ -160,7 +161,7 @@ Feature: Register
   Scenario: Register without fill phone number
     Given user open register page
     And user input name shop "Toko Testing Cuan Bismillah"
-    And user input email "tester0001@mail.com"
+    And user input email "tester0978@mail.com"
     And user input password "test123"
     And user input address "Jalan Surabaya Blok H Nomor 100"
     Then user click sign up button
@@ -170,7 +171,7 @@ Feature: Register
   Scenario: Register without fill password
     Given user open register page
     And user input name shop "Toko Testing Cuan Bismillah"
-    And user input email "tester0001@mail.com"
+    And user input email "tester0024@mail.com"
     And user input phone number "08574893829"
     And user input address "Jalan Surabaya Blok H Nomor 100"
     Then user click sign up button
@@ -180,7 +181,7 @@ Feature: Register
   Scenario: Register without fill address
     Given user open register page
     And user input name shop "Toko Testing Cuan Bismillah"
-    And user input email "tester10000@mail.com"
+    And user input email "tester12342@mail.com"
     And user input phone number "08574893829"
     And user input password "test123"
     Then user click sign up button
@@ -190,8 +191,8 @@ Feature: Register
   Scenario: Register with email already registered
     Given user open register page
     And user input name shop "Toko New User"
-    And user input email "testingtoko1@mail.com"
-    And user input phone number "08973839404"
+    And user input email "rizkydemons5@gmail.com"
+    And user input phone number "08973837897"
     And user input password "test1234"
     And user input address "Jalan Surabaya Blok T"
     Then user click sign up button

@@ -17,7 +17,7 @@ public class MiddlemanPaymentStep extends BasePageObject {
         middlemanPaymentpages.scrollDownLittleBit();
     }
 
-    @And("click button add product on Super Bubur")
+    @And("click button add one product")
     public void clickButtonAddProductOnSuperBubur() {
         middlemanPaymentpages.clickAddSuperBubur();
     }
