@@ -75,9 +75,15 @@ public class MiddlemanUserProductsStep extends BasePageObject {
     }
 
     @Then("user should stay in the Add Product pop up")
-    public void userSeeRequiredAlertPleaseEnterANumberOnStockField() {
+    public void userStayInAddProductPopUp() {
         Assert.assertTrue(middlemanUserProductsPages.isStillOnPopUpAddProduct());
 
+    }
+
+
+    @Then("user should stay in the Edit Product pop up")
+    public void userStayInEditProductPopUp() {
+        // harus di implementasi mirip ama kasus user should stay in the Add Product pop up
     }
 
     @Then("user see required alert please enter a number on price field")
@@ -140,5 +146,25 @@ public class MiddlemanUserProductsStep extends BasePageObject {
     public void userEditPrice(String price) {
         middlemanUserProductsPages.editProductPrice(price);
     }
+
+
+    @And("user clear product name")
+    public void userEditProductName() {
+        middlemanUserProductsPages.clearProductName();
+    }
+
+    @And("user clear unit")
+    public void userEditUnit() {
+        middlemanUserProductsPages.clearProductUnit();
+    }
+    @And("user clear stock")
+    public void userEditStock() {
+        middlemanUserProductsPages.clearProductStock();
+    }
+    @And("user clear price")
+    public void userEditPrice() {
+        middlemanUserProductsPages.clearProductPrice();
+    }
+
 
 }

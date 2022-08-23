@@ -75,20 +75,33 @@ public class MiddlemanUserProductsPages extends BasePageObject {
     }
 
     public void editProductName(String name){
-        clearInput(elementEditInputProductName);
+        clearProductName();
         typeOn(elementEditInputProductName, name);
     }
     public void editProductUnit(String unit) {
-        clearInput(elementEditInputProductUnit);
+        clearProductUnit();
         typeOn(elementEditInputProductUnit, unit);
     }
     public void editProductPrice(String price) {
-        clearInput(elementEditInputProductPrice);
+        clearProductPrice();
         typeOn(elementEditInputProductPrice, price);
     }
     public void editProductStock(String stock) {
-        clearInput(elementEditInputProductStock);
+       clearProductStock();
         typeOn(elementEditInputProductStock, stock);
+    }
+
+    public void clearProductName(){
+        clearInput(elementEditInputProductName);
+    }
+    public void clearProductUnit() {
+        clearInput(elementEditInputProductUnit);
+    }
+    public void clearProductPrice() {
+        clearInput(elementEditInputProductPrice);
+    }
+    public void clearProductStock() {
+        clearInput(elementEditInputProductStock);
     }
 
 

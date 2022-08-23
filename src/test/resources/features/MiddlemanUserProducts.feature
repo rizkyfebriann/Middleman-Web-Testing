@@ -164,6 +164,17 @@ Feature: Login
 
   @UpdateProductAdmin @Positive
   Scenario: Update product user without unit
+    Given user go to page my product
+    And user will see my product page
+    When user click on button edit in a product list index 1
+    And user input product image
+    And user edit new product name "beras pulennn" with random suffix
+    And user clear unit
+    And user edit stock "4"
+    And user edit price "5000"
+    And user click on button edit
+    # Ini belom di implementasi, harus check XPath buat dialog boxnya
+    Then user should stay in the Edit Product pop up
 
   @UpdateProductAdmin @Negative
   Scenario: Update product user with invalid data stock
