@@ -143,13 +143,14 @@ Feature: Login
   Scenario: Update product user with valid data
     Given user go to page my product
     And user will see my product page
-    When user click on button edit
+    When user click on button edit in a product list index 1
     And user input product image
     And user input new product name "beras pulennn" with random suffix
     And user input unit "pcs"
     And user input stock "4"
     And user input price "5000"
-    And user see alert success add product & click OK
+    And user click on button edit
+    And user can see alert internal error with alert "success update data" add product & click OK
     Then user success update product to my product page
 
   @UpdateProductAdmin @Positive

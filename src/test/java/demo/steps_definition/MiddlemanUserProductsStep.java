@@ -110,4 +110,10 @@ public class MiddlemanUserProductsStep extends BasePageObject {
     public void userSuccessUpdateProductToMyProductPage() {
         middlemanUserProductsPages.isSuccessRedirectToMyProduct();
     }
+
+    @When ("user click on button edit in a product list index {int}")
+    public void userClickEditOnProductList(int index) {
+        // cari element edit di product list My Product
+        // trus di click
+    }
 }
