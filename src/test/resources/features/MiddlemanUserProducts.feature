@@ -138,7 +138,7 @@ Feature: Login
     And user see alert success add product & click OK
     Then user back to my product page
 
-# Setengah sukses
+# Sukses
   @UpdateProductAdmin @Positive
   Scenario: Update product user with valid data
     Given user go to page my product
@@ -147,9 +147,8 @@ Feature: Login
     And user input product image
     And user edit new product name "beras pulennn" with random suffix
     And user edit unit "pcs"
-    # BELOM BERHASIL XPATH STOCK AMA PRICE
-    #And user edit stock "4"
-    #And user edit price "5000"
+    And user edit stock "4"
+    And user edit price "5000"
     And user click on button edit
     And user can see alert internal error with alert "success update data" add product & click OK
     Then user success update product to my product page

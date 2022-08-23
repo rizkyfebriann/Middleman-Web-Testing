@@ -30,8 +30,8 @@ public class MiddlemanUserProductsPages extends BasePageObject {
     By elementEditInputProductImage = By.xpath("//form[@id='form-edit']//input[@id='input-image']");
     By elementEditInputProductName = By.xpath("//form[@id='form-edit']//input[@id='input-name']");
     By elementEditInputProductUnit = By.xpath("//form[@id='form-edit']//input[@id='input-unit']");
-    By elementEditInputProductStock = By.xpath("//body/div[@id='__next']/div[5]/div[1]/form[1]/div[1]/input[1]");
-    By elementEditInputProductPrice = By.xpath("//body/div[@id='__next']/div[5]/div[1]/form[1]/div[1]/input[2]");
+    By elementEditInputProductStock = By.xpath("//form[@id='form-edit']//input[@id='input-stock']");
+    By elementEditInputProductPrice = By.xpath("//form[@id='form-edit']//input[@id='input-price']");
 
 
 
