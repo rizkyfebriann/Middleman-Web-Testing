@@ -80,9 +80,11 @@ public class MiddlemanUserProductsStep extends BasePageObject {
         middlemanUserProductsPages.isStillOnPopUpAddProduct();
     }
 
-    @And("user see reuired alert internal error add product & click OK")
-    public void userSeeReuiredAlertInternalErrorAddProductClickOK() {
-        middlemanUserProductsPages.generalAlertAccept2();
+    @And("user can see alert internal error with alert {string} add product & click OK")
+    public void userSeeReuiredAlertInternalErrorAddProductClickOK(String errorAlert) {
+        String textAlert = middlemanUserProductsPages.generalAlertAcceptWithTextAssert(errorAlert);
+        // check kalau stringnya sama atau tidak. karena String, maka harus pakai method .equals
+        Assert.assertTrue(errorAlert.equals(textAlert));
     }
 
     @Then("user back to my product page")

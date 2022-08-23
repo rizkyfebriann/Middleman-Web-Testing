@@ -75,7 +75,7 @@ public class MiddlemanUserProductsPages extends BasePageObject {
         clickOn(elementBtnCancel);
     }
     public void alertSuccessfullyAddProduct() {
-        generalAlertAccept2();
+        generalAlertAccept(15);
     }
     public boolean isSuccessfullyAddProduct() {
         wait(5000);

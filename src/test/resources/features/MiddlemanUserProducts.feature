@@ -46,21 +46,22 @@ Feature: Login
     And user input stock "20"
     And user input price "5000"
     And user click on button add product
-    And user can see alert internal error add product & click OK
+    And user see alert success add product & click OK
     Then user back to my product page
 
+ #sukses
   @AddProductAdmin @Negative
   Scenario: Add product user on my product page with empty image product field
     Given user go to page my product
     And user will see my product page
     When user click button add on page my product
-    And user input product image
     And user input product name "beras pulennn"
     And user input unit "pcs"
     And user input stock "20"
     And user input price "5000"
     And user click on button add product
-    And user can see alert internal error add product & click OK
+      # check alert text
+    And user can see alert internal error with alert "failed to get file" add product & click OK
     Then user back to my product page
 
   @AddProductAdmin @Negative
