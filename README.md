@@ -122,7 +122,7 @@ Middleman is a project for helping each store for buying some products for stock
 
   ## Web Automation Test Video
       
-    [![Alt text](https://img.youtube.com/vi/VID/0.jpg)](https://www.youtube.com/watch?v=pIbP4oiBJEM&ab_channel=NashuhaMahira)
+    [Click On Here](https://www.youtube.com/watch?v=pIbP4oiBJEM&t=1s&ab_channel=NashuhaMahira)
 
 
 ## Tech Stack 
